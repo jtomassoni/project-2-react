@@ -10,7 +10,7 @@ const TotalShips = () => {
 			.then((res) => {
 				setShips(res);
 			})
-			.catch(console.error);
+			.catch((error) => alert('API Fetch Error'));
 	}, []);
 
 	return (
@@ -22,7 +22,10 @@ const TotalShips = () => {
 							<h3>{ship.name}</h3>
 							<div className='card-image'>
 								{!ship.image ? (
-									<img src={process.env.PUBLIC_URL+'/no_image_found.png'} alt='not found' />
+									<img
+										src={process.env.PUBLIC_URL + '/no_image_found.png'}
+										alt='not found'
+									/>
 								) : (
 									<img src={ship.image} class='img-thumbnail' alt={ship.name} />
 								)}

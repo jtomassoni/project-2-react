@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const LaunchPadDetails = ({ match }) => {
 	const [launchpad, setLaunchpad] = useState('');
@@ -46,7 +47,9 @@ const LaunchPadDetails = ({ match }) => {
 					{launchpad.launches.map((launch) => {
 						return (
 							<ul>
-								<li>{launch}</li>
+								<Link to={`/launches/${launch}`}>
+									<li>{launch}</li>
+								</Link>
 							</ul>
 						);
 					})}

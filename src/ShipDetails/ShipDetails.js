@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const ShipDetails = ({ match }) => {
 	const [ship, setShips] = useState('');
@@ -51,7 +52,9 @@ const ShipDetails = ({ match }) => {
 					{ship.launches.map((launch) => {
 						return (
 							<ul>
+								<Link to={`/launches/${launch}`}>
 								<li>{launch}</li>
+								</Link>
 							</ul>
 						);
 					})}

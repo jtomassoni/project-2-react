@@ -37,11 +37,13 @@ const LaunchDetails = ({ match }) => {
 					</>
 				)}
 			</div>
-			<h3>Mission Name: {launch.name}</h3>
-			<h3>
-				Mission Date:{' '}
-				<Moment parse='YYYY-MM-DD HH:mm'> {launch.date_utc}</Moment>
-			</h3>
+			<div className='detailsMissionInfo'>
+				<h3>Mission Name: {launch.name}</h3>
+				<h3>
+					Mission Date:{' '}
+					<Moment parse='YYYY-MM-DD HH:mm'> {launch.date_utc}</Moment>
+				</h3>
+			</div>
 			<div className='detailsCardDetails'>
 				<h4>Mission Details:</h4>
 				{launch.details !== null ? (

@@ -11,7 +11,7 @@ const TotalLaunchPads = () => {
 			.then((res) => {
 				setLaunchPads(res);
 			})
-			.catch(console.error);
+			.catch((error) => alert('API Fetch Error'));
 	}, []);
 
 	return (

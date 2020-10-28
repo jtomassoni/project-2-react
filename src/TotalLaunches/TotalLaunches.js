@@ -10,7 +10,7 @@ const TotalLaunches = () => {
 			.then((res) => {
 				setLaunches(res);
 			})
-			.catch(console.error);
+			.catch((error) => alert('API Fetch Error'));
 	}, []);
 
 	return (
