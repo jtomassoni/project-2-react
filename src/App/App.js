@@ -8,13 +8,13 @@ import LaunchPadDetails from '../LaunchPadDetails/LaunchPadDetails';
 import TotalShips from '../TotalShips/TotalShips';
 import ShipDetails from '../ShipDetails/ShipDetails';
 import LaunchDetails from '../LaunchDetails/LaunchDetails';
-
+import './App.css';
 
 function App() {
 	return (
 		<div className='App'>
 			<Header />
-			
+
 			<Route path='/launches' exact component={TotalLaunches} />
 			<Route
 				path='/launches/:id'

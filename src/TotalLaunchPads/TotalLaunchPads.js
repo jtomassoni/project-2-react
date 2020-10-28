@@ -26,9 +26,6 @@ const TotalLaunchPads = () => {
 					</Link>
 				);
 			})}
-			<div className='view-more'>
-				<Button>View more</Button>
-			</div>
 		</div>
 	);
 };

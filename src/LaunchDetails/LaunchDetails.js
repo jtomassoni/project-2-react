@@ -19,42 +19,72 @@ const LaunchDetails = ({ match }) => {
 	}
 
 	return (
-		<div className='launchDetailsContainer'>
-			<div className='launchDetailsCard'>
-				<div className='launchDetailsCard-image'>
+		<div className='detailsContainer'>
+			<div className='detailsPatchImage'>
+				{launch.links.patch.small !== null ? (
 					<img
 						src={launch.links.patch.small}
 						alt={`small ${launch.name} patch`}
 						lt
 					/>
-				</div>
-				<h3>Mission Name: {launch.name}</h3>
-				<h3>
-					Mission Date:{' '}
-					<Moment parse='YYYY-MM-DD HH:mm'> {launch.date_utc}</Moment>
-				</h3>
-				<div className='launchDetailsCard-details'>
-					<h4>Mission Details:</h4>
+				) : (
+					<>
+						<img
+							src={process.env.PUBLIC_URL + '/no_image_found.png'}
+							alt={launch.name}
+						/>
+						<p>There are no patches to display</p>
+					</>
+				)}
+			</div>
+			<h3>Mission Name: {launch.name}</h3>
+			<h3>
+				Mission Date:{' '}
+				<Moment parse='YYYY-MM-DD HH:mm'> {launch.date_utc}</Moment>
+			</h3>
+			<div className='detailsCardDetails'>
+				<h4>Mission Details:</h4>
+				{launch.details !== null ? (
 					<p>{launch.details}</p>
-				</div>
-				<div className='launchDetailsYT-player'>
+				) : (
+					<p>There are no launch details to display.</p>
+				)}
+			</div>
+			<div className='detailsYTPlayer'>
+				{launch.links.youtube_id !== null ? (
 					<ReactPlayer
 						url={`https://www.youtube.com/watch?v=${launch.links.youtube_id}`}
 						controls={true}
 					/>
-				</div>
+				) : (
+					<>
+						<img
+							src={process.env.PUBLIC_URL + '/no_image_found.png'}
+							alt={launch.name}
+						/>
+						<p>There are no videos to display</p>
+					</>
+				)}
+			</div>
+			<div className='detailsPhotoCarousel'>
 				{launch.links.flickr.original.length > 0 ? (
 					<Carousel>
 						{launch.links.flickr.original.map((pic) => {
 							return (
 								<Carousel.Item>
-									<img src={pic} alt='launch' />
-									</Carousel.Item>
-									);
-								})}
+									<img src={pic} class='img-fluid' alt='launch' />
+								</Carousel.Item>
+							);
+						})}
 					</Carousel>
 				) : (
-					'There are no photos to display'
+					<>
+						<img
+							src={process.env.PUBLIC_URL + '/no_image_found.png'}
+							alt={launch.name}
+						/>
+						<p>There are no photos to display</p>
+					</>
 				)}
 			</div>
 		</div>

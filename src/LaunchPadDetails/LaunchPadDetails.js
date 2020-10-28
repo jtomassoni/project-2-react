@@ -16,8 +16,8 @@ const LaunchPadDetails = ({ match }) => {
 	}
 
 	return (
-		<div className='DetailsContainer'>
-			<div className='DetailsCard'>
+		<div className='detailsContainer'>
+			<div className='detailsCard'>
 				<h2>Launchpad Name: {launchpad.name}</h2>
 				<h3>
 					<em>Full Name: {launchpad.full_name}</em>
@@ -25,7 +25,11 @@ const LaunchPadDetails = ({ match }) => {
 				<h3>
 					Location: {launchpad.latitude},{launchpad.longitude}
 				</h3>
-				<h3>Status:{launchpad.status}</h3>
+				<p>{launchpad.details}</p>
+				<h3>
+					Status:{' '}
+					{launchpad.status.charAt(0).toUpperCase() + launchpad.status.slice(1)}
+				</h3>
 				<h3>Number of Attempts: {launchpad.launch_attempts}</h3>
 				<h3>
 					Rockets:{' '}

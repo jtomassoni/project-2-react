@@ -16,11 +16,26 @@ const ShipDetails = ({ match }) => {
 	}
 
 	return (
-		<div className='DetailsContainer'>
-			<div className='DetailsCard'>
+		<div className='detailsContainer'>
+			<div className='detailsCard'>
 				<h2>Ship Name: {ship.name}</h2>
-				<h4>More Info: {ship.link}</h4>
-				<img src={ship.image} alt={ship.name} />
+				<h4>Status: {ship.active ? 'Active' : 'Retired'}</h4>
+				{ship.link ? (
+					<h4>
+						<a href={ship.link}>More Info on {ship.name}</a>
+					</h4>
+				) : null}
+				{ship.image ? (
+					<img src={ship.image} class='img-thumbnail' alt={ship.name} />
+				) : (
+					<>
+						<img
+							src={process.env.PUBLIC_URL + '/no_image_found.png'}
+							alt='not found'
+						/>
+						<p>There are no images of this ship.</p>
+					</>
+				)}
 				<h3>
 					SpaceX Roles:{' '}
 					{ship.roles.map((role) => {
