@@ -28,7 +28,7 @@ const TotalLaunches = () => {
 								) : (
 									<img
 										src={launch.links.patch.small}
-										class='img-thumbnail'
+										className='img-thumbnail'
 										alt={`small ${launch.name} patch`}
 									/>
 								)}

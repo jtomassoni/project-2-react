@@ -13,6 +13,7 @@ const LaunchDetails = ({ match }) => {
 			.then((res) => {
 				setLaunch(res);
 			});
+		//eslint-disable-next-line
 	}, []);
 	if (!launch) {
 		return null;
@@ -25,7 +26,6 @@ const LaunchDetails = ({ match }) => {
 					<img
 						src={launch.links.patch.small}
 						alt={`small ${launch.name} patch`}
-						lt
 					/>
 				) : (
 					<>
@@ -73,8 +73,8 @@ const LaunchDetails = ({ match }) => {
 					<Carousel>
 						{launch.links.flickr.original.map((pic) => {
 							return (
-								<Carousel.Item>
-									<img src={pic} class='img-fluid' alt='launch' />
+								<Carousel.Item key={pic}>
+									<img src={pic} className='img-fluid' alt='launch' />
 								</Carousel.Item>
 							);
 						})}
@@ -89,6 +89,9 @@ const LaunchDetails = ({ match }) => {
 					</>
 				)}
 			</div>
+			{/* <div className='detailsVehiclesUsed'>
+				{launch.ships.map(())}
+			</div> */}
 		</div>
 	);
 };

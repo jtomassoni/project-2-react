@@ -11,6 +11,7 @@ const LaunchPadDetails = ({ match }) => {
 			.then((res) => {
 				setLaunchpad(res);
 			});
+		// eslint-disable-next-line;
 	}, []);
 	if (!launchpad) {
 		return null;

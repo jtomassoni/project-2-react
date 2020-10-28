@@ -11,6 +11,7 @@ const ShipDetails = ({ match }) => {
 			.then((res) => {
 				setShips(res);
 			});
+		//eslint-disable-next-line
 	}, []);
 	if (!ship) {
 		return null;
@@ -27,7 +28,7 @@ const ShipDetails = ({ match }) => {
 					</h4>
 				) : null}
 				{ship.image ? (
-					<img src={ship.image} class='img-thumbnail' alt={ship.name} />
+					<img src={ship.image} className='img-thumbnail' alt={ship.name} />
 				) : (
 					<>
 						<img
@@ -53,7 +54,7 @@ const ShipDetails = ({ match }) => {
 						return (
 							<ul>
 								<Link to={`/launches/${launch}`}>
-								<li>{launch}</li>
+									<li>{launch}</li>
 								</Link>
 							</ul>
 						);
