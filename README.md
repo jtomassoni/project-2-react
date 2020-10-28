@@ -16,6 +16,7 @@ Youre able to navigate between launch data as well as vehicles, launchpads, and 
 ![image](https://media.git.generalassemb.ly/user/30880/files/73210e00-1646-11eb-9527-2cc274ace892)
 
 ## Current Component Heirarchy
+![image](https://media.git.generalassemb.ly/user/30880/files/1c1c8100-1945-11eb-9485-bc9085db4806)
 
 ## Wire Frames
 ![image](https://media.git.generalassemb.ly/user/30880/files/8633de00-1646-11eb-8213-feca075db2d8)
