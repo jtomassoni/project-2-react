@@ -18,10 +18,13 @@ const TotalLaunches = () => {
 		<div className='container'>
 			{launches.map((launch) => {
 				return (
-					<Link to={`/launch/${launch.id}`} key={launch.id}>
+					<Link to={`/launches/${launch.id}`} key={launch.id}>
 						<div className='card'>
 							<div className='card=image'>
-								<img src={launch.links.patch.small} />
+								<img
+									src={launch.links.patch.small}
+									alt={`small ${launch.name} patch`}
+								/>
 							</div>
 							<h3>{launch.name}</h3>
 						</div>
