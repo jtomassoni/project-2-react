@@ -12,6 +12,7 @@ import Crew from '../Crew/Crew';
 import Rockets from '../Rockets/Rockets';
 import Landpads from '../Landpads/Landpads';
 import LandpadDetails from '../LandpadDetails/LandpadDetails';
+import Roadster from '../Roadster/Roadster';
 
 import './App.css';
 
@@ -48,6 +49,7 @@ function App() {
 					return <LandpadDetails match={routerProps.match} />;
 				}}
 			/>
+			<Route path='/roadster' exact component={Roadster} />
 			<Route path='/crew' exact component={Crew} />
 			<Route path='/rockets' exact component={Rockets} />
 			<Route path='/latest' component={Latest} />

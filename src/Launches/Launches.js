@@ -7,6 +7,9 @@ let launchesUrl = 'https://api.spacexdata.com/v4/launches';
 
 const Launches = () => {
 	const [launches, setLaunches] = useState([]);
+	const [reverseArr, setReverseArr] = useState(false);
+	//if reverseArr is false, display oldest to newest.
+	//if reverseArr is true, display oldest to newest.
 	useEffect(() => {
 		fetch(launchesUrl)
 			.then((res) => res.json())
@@ -19,8 +22,9 @@ const Launches = () => {
 	return (
 		<>
 			<div className='sortButtons'>
-				<Button variant='dark'>Most Recent First</Button>
-				<Button variant='dark'>Oldest First</Button>
+				<Button variant='dark' onClick={setReverseArr}>
+					Oldest/Newest First
+				</Button>
 			</div>
 			<div className='container'>
 				{launches.map((launch) => {

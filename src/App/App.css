@@ -32,6 +32,10 @@ nav {
 .sortButtons {
 	text-align: center;
 }
+.starmanVideoPlayer {
+	display: flex;
+	justify-content: space-around;
+}
 .sortButtons Button {
 	margin: 0.5rem 3rem;
 }
@@ -39,7 +43,6 @@ nav {
 	display: flex;
 	justify-content: space-between;
 }
-
 .links a {
 	margin-left: 2rem;
 }

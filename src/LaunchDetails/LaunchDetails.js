@@ -12,7 +12,8 @@ const LaunchDetails = ({ match }) => {
 			.then((res) => res.json())
 			.then((res) => {
 				setLaunch(res);
-			});
+			})
+			.catch((error) => alert('API Fetch Error'));
 		//eslint-disable-next-line
 	}, []);
 	if (!launch) {

@@ -56,6 +56,6 @@ SCreenshot.
 
 ## Unsolved Mysteries
 
-- Git.Hub
+- Git.Hub.
 
 ## Solved Mysteries

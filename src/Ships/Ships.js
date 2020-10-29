@@ -27,7 +27,11 @@ const TotalShips = () => {
 										alt='not found'
 									/>
 								) : (
-									<img src={ship.image} className='img-thumbnail' alt={ship.name} />
+									<img
+										src={ship.image}
+										className='img-thumbnail'
+										alt={ship.name}
+									/>
 								)}
 							</div>
 						</div>

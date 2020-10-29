@@ -13,7 +13,8 @@ const LandpadDetails = ({ match }) => {
 			.then((res) => res.json())
 			.then((res) => {
 				setLandpad(res);
-			});
+			})
+			.catch((error) => alert('API Fetch Error'));
 		//eslint-disable-next-line
 	}, []);
 	if (!landpad) {
