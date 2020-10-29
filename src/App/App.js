@@ -52,6 +52,7 @@ function App() {
 			<Route path='/rockets' exact component={Rockets} />
 			<Route path='/latest' component={Latest} />
 			<Route path='/' exact render={() => <Redirect to='/latest' />} />
+			{/* hello */}
 		</div>
 	);
 }
