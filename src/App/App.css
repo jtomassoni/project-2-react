@@ -1,8 +1,9 @@
-.container {
+/* .container {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	grid-auto-rows: minmax(250px, auto);
-}
+} */
+
 .card {
 	border: 1px solid black;
 	padding: 50px;
@@ -14,8 +15,6 @@
 }
 .crewCard-image img {
 	max-height: 300px;
-}
-.launches {
 }
 
 nav {
@@ -46,7 +45,9 @@ nav {
 .links a {
 	margin-left: 2rem;
 }
-
+.crewCards {
+	min-width: 500px;
+}
 .detailsContainer {
 	display: grid;
 	grid-template-columns: repeat(5, minmax(100px, 1fr));

@@ -4,6 +4,8 @@ import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import Moment from 'react-moment';
+import CardDeck from 'react-bootstrap/CardDeck';
+import Container from 'react-bootstrap/Container';
 
 let rocketsUrl = 'https://api.spacexdata.com/v4/rockets';
 const Crew = () => {
@@ -18,31 +20,33 @@ const Crew = () => {
 	}, []);
 
 	return (
-		<div className='container'>
-			{rockets.map((rocket) => {
-				return (
-					<Card style={{ width: '18rem' }} key={rocket.id}>
-						<Card.Img variant='top' src={rocket.flickr_images[0]} />
-						<Card.Body>
-							<Card.Title>{rocket.name}</Card.Title>
-							<Card.Text>{rocket.description}</Card.Text>
-						</Card.Body>
-						<ListGroup className='list-group-flush'>
-							<ListGroupItem>Height(m): {rocket.height.meters}</ListGroupItem>
-							<ListGroupItem>Height(ft): {rocket.height.feet}</ListGroupItem>
-							<ListGroupItem>
-								First Flight:{' '}
-								<Moment format='YYYY-MM-DD'>{rocket.first_flight}</Moment>
-							</ListGroupItem>
-						</ListGroup>
-						<Card.Body>
-							<Card.Link href={rocket.wikipedia}>
-								<Button>Learn More</Button>
-							</Card.Link>
-						</Card.Body>
-					</Card>
-				);
-			})}
+		<div className='contdainer'>
+			<Container>
+				{rockets.map((rocket) => {
+					return (
+						<CardDeck style={{ width: '18rem' }} key={rocket.id}>
+							<Card.Img variant='top' src={rocket.flickr_images[0]} />
+							<Card.Body>
+								<Card.Title>{rocket.name}</Card.Title>
+								<Card.Text>{rocket.description}</Card.Text>
+							</Card.Body>
+							<ListGroup className='list-group-flush'>
+								<ListGroupItem>Height(m): {rocket.height.meters}</ListGroupItem>
+								<ListGroupItem>Height(ft): {rocket.height.feet}</ListGroupItem>
+								<ListGroupItem>
+									First Flight:{' '}
+									<Moment format='YYYY-MM-DD'>{rocket.first_flight}</Moment>
+								</ListGroupItem>
+							</ListGroup>
+							<Card.Body>
+								<Card.Link href={rocket.wikipedia}>
+									<Button>Learn More</Button>
+								</Card.Link>
+							</Card.Body>
+						</CardDeck>
+					);
+				})}
+			</Container>
 		</div>
 	);
 };
