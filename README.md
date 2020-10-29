@@ -13,7 +13,6 @@ What I have built for you is an app that quickly and easily displays spaceX laun
 Youre able to navigate between launch data as well as vehicles, launchpads, and landpads.
 
 ## OG Component Heirarchy
-![image](https://media.git.generalassemb.ly/user/30880/files/73210e00-1646-11eb-9527-2cc274ace892)
 
 ## Current Component Heirarchy
 ![image](https://media.git.generalassemb.ly/user/30880/files/1c1c8100-1945-11eb-9485-bc9085db4806)
