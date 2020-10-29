@@ -5,7 +5,7 @@ import Latest from '../Latest/Latest';
 import Launches from '../Launches/Launches';
 import LaunchDetails from '../LaunchDetails/LaunchDetails';
 import Launchpads from '../Launchpads/Launchpads';
-import LaunchpadDetails from '../LaunchPPPadDetails/LaunchPPPadDetails';
+import LaunchpadDetails from '../LaunchpadDetails/LaunchpadDetails';
 import Ships from '../Ships/Ships';
 import ShipDetails from '../ShipDetails/ShipDetails';
 import Crew from '../Crew/Crew';
