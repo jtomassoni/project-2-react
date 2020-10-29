@@ -10,7 +10,8 @@ const ShipDetails = ({ match }) => {
 			.then((res) => res.json())
 			.then((res) => {
 				setShips(res);
-			});
+			})
+			.catch((error) => alert('API Fetch Error'));
 		//eslint-disable-next-line
 	}, []);
 	if (!ship) {

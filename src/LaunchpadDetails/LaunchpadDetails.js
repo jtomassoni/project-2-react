@@ -13,7 +13,8 @@ const LaunchpadDetails = ({ match }) => {
 			.then((res) => res.json())
 			.then((res) => {
 				setLaunchpad(res);
-			});
+			})
+			.catch((error) => alert('API Fetch Error'));
 		//eslint-disable-next-line
 	}, []);
 	if (!launchpad) {

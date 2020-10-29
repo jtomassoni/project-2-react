@@ -12,7 +12,7 @@ const LatestLaunch = () => {
 			.then((res) => {
 				setLaunch(res);
 			})
-			.catch(console.error);
+			.catch((error) => alert('API Fetch Error'));
 	}, []);
 	if (!launch) {
 		return null;
