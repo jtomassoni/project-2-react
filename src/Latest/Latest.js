@@ -18,45 +18,57 @@ const LatestLaunch = () => {
 		return null;
 	}
 	return (
-		<div className='latestContainer'>
-			<div className='latestCard'>
+		<>
+			<div className='latestHeading'>
 				<h1>Most Recent Mission:</h1>
-				<div className='latestCard-image'>
+			</div>
+			<div className='detailsContainer'>
+				<div className='detailsPatchImage'>
 					<img
 						src={launch.links.patch.small}
 						alt={`small ${launch.name} patch`}
 					/>
 				</div>
-				<h3>Mission Name: {launch.name}</h3>
-				<h3>
-					Mission Date:{' '}
-					<Moment parse='YYYY-MM-DD HH:mm'> {launch.date_utc}</Moment>
-				</h3>
-				<div className='latestCard-details'>
+				<div className='detailsMissionInfo'>
+					<h3>Mission Name: {launch.name}</h3>
+					<h3>
+						Mission Date:{' '}
+						<Moment parse='YYYY-MM-DD HH:mm'> {launch.date_utc}</Moment>
+					</h3>
+				</div>
+				<div className='detailsCardDetails'>
 					<h4>Mission Details:</h4>
 					<p>{launch.details}</p>
 				</div>
-				<div className='LatestYT-player'>
+				<div className='detailsYTPlayer'>
 					<ReactPlayer
 						url={`https://www.youtube.com/watch?v=${launch.links.youtube_id}`}
 						controls={true}
 					/>
 				</div>
-				{launch.links.flickr.small.length > 0 ? (
-					<Carousel>
-						{launch.links.flickr.small.map((pic) => {
-							return (
-								<Carousel.Item>
-									<img src={pic} alt='launch' />
-								</Carousel.Item>
-							);
-						})}
-					</Carousel>
-				) : (
-					'There are no photos to display'
-				)}
+				<div className='detailsPhotoCarousel'>
+					{launch.links.flickr.small.length > 0 ? (
+						<Carousel>
+							{launch.links.flickr.small.map((pic) => {
+								return (
+									<Carousel.Item>
+										<img src={pic} alt='launch' />
+									</Carousel.Item>
+								);
+							})}
+						</Carousel>
+					) : (
+						<>
+							<img
+								src={process.env.PUBLIC_URL + '/no_image_found.png'}
+								alt={launch.name}
+							/>
+							<p>There are no photos to display</p>
+						</>
+					)}
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 
