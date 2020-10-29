@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player'; //coderocketfuel, how to embed a YT video and githib.com/cookpete/react-player
 import Carousel from 'react-bootstrap/Carousel';
 import Moment from 'react-moment';
+import Container from 'react-bootstrap/Container';
+import Spinner from 'react-bootstrap/Spinner';
 
 const LatestLaunch = () => {
-	const [launch, setLaunch] = useState();
+	const [launch, setLaunch] = useState([]);
 	useEffect(() => {
 		let latestUrl = 'https://api.spacexdata.com/v4/launches/latest';
 		fetch(latestUrl)
@@ -14,8 +16,21 @@ const LatestLaunch = () => {
 			})
 			.catch((error) => alert('API Fetch Error'));
 	}, []);
-	if (!launch) {
-		return null;
+	if (launch.length === 0) {
+		return (
+			<Container
+				style={{
+					display: 'flex',
+					justifyContent: 'space-around',
+					alignItems: 'center',
+					height: '50vh',
+				}}>
+				<div>
+					Loading...
+					<Spinner animation='grow' variant='success' size='sm' />
+				</div>
+			</Container>
+		);
 	}
 	return (
 		<>
