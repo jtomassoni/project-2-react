@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Spinner from 'react-bootstrap/Spinner';
 
 const ShipDetails = ({ match }) => {
 	const [ship, setShips] = useState('');
@@ -14,8 +16,21 @@ const ShipDetails = ({ match }) => {
 			.catch((error) => alert('API Fetch Error'));
 		//eslint-disable-next-line
 	}, []);
-	if (!ship) {
-		return null;
+	if (ship.length === 0) {
+		return (
+			<Container
+				style={{
+					display: 'flex',
+					justifyContent: 'space-around',
+					alignItems: 'center',
+					height: '50vh',
+				}}>
+				<div>
+					Loading...
+					<Spinner animation='grow' variant='success' size='sm' />
+				</div>
+			</Container>
+		);
 	}
 
 	return (

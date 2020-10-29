@@ -4,6 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import ReactPlayer from 'react-player';
+import Container from 'react-bootstrap/Container';
+import Spinner from 'react-bootstrap/Spinner';
+//Import Card or CardContainer/CardGroup/CardDeck
 
 const Header = () => {
 	const [showStarman, setShowStarman] = useState(false);
@@ -29,8 +32,21 @@ const Header = () => {
 			})
 			.catch((error) => alert('API Fetch Error'));
 	}, []);
-	if (!roadster) {
-		return null;
+	if (roadster.length === 0) {
+		return (
+			<Container
+				style={{
+					display: 'flex',
+					justifyContent: 'space-around',
+					alignItems: 'center',
+					height: '50vh',
+				}}>
+				<div>
+					Loading...
+					<Spinner animation='grow' variant='success' size='sm' />
+				</div>
+			</Container>
+		);
 	}
 	return (
 		<div className='header'>
@@ -104,8 +120,10 @@ const Header = () => {
 								</Button>
 								<Link
 									to={'launches/5eb87d13ffd86e000604b360'}
-									onClick={handleCloseYoutube}
-									onClick={handleCloseStarman}>
+									onClick={() => {
+										handleCloseYoutube();
+										handleCloseStarman();
+									}}>
 									<Button variant='secondary'>Click for Launch Details</Button>
 								</Link>
 								<Modal
