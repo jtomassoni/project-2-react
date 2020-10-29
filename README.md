@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Welcome to jtX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+What I have built for you is an app that quickly and easily displays spaceX launch data.  
 
-## Available Scripts
+### It includes:
+- The most recent Launch on load.
+- The ability to view all Launches in SpaceX history, as well as any upcoming launches that are officially scheduled.
+- Vehichles
+- Launchpads
+- Crew
+- Starman Bonus
 
-In the project directory, you can run:
+Youre able to navigate between launch data as well as vehicles, launchpads, and landpads.
 
-### `npm start`
+## OG Component Heirarchy
+![image](https://media.git.generalassemb.ly/user/30880/files/73210e00-1646-11eb-9527-2cc274ace892)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Current Component Heirarchy
+![image](https://media.git.generalassemb.ly/user/30880/files/1c1c8100-1945-11eb-9485-bc9085db4806)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Wire Frames
+![image](https://media.git.generalassemb.ly/user/30880/files/8633de00-1646-11eb-8213-feca075db2d8)
+![image](https://media.git.generalassemb.ly/user/30880/files/1a9e4080-1647-11eb-90e6-a4b3c0577f4d)
 
-### `npm test`
+## User Stories
+### MVP Goals
+As a user, I want to be able to see the latest SpaceX flight info.
+As a user, I want to be able to see all of the SpaceX flights in a list.
+As a user, I want to be able to click one of the spaceX flights in that list, and be brought to a details screen.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Stretch Goals
+Any kind of filtering: mission type(Starlink, National Recon Office, NASA), vehicles used(rockets, recovery drone ships), date ranges.
+Or custom Sorting, oldest first, newest first.(two buttons)
 
-### `npm run build`
+## Technologies Used
+- JavaScript
+- React
+- CSS
+- Bootstrap
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##How to use
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [Click here](URL)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screenshots
 
-### `npm run eject`
+## Unsolved Mysteries
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Solved Mysteries
