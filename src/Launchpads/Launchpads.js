@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 
 let launchPadsUrl = 'https://api.spacexdata.com/v4/launchpads';
 const TotalLaunchPads = () => {
@@ -18,10 +19,16 @@ const TotalLaunchPads = () => {
 			{launchPads.map((launchpad) => {
 				return (
 					<Link to={`/launchpads/${launchpad.id}`} key={launchpad.id}>
-						<div className='card'>
-							<h3>{launchpad.name}</h3>
-							<h5>Status: {launchpad.status}</h5>
-						</div>
+						<Card style={{ width: '18rem' }}>
+							<Card.Body>
+								<Card.Title>{launchpad.name}</Card.Title>
+								<Card.Subtitle className='mb-2 text-muted'>
+									Status:{' '}
+									{launchpad.status.charAt(0).toUpperCase() +
+										launchpad.status.slice(1)}
+								</Card.Subtitle>
+							</Card.Body>
+						</Card>
 					</Link>
 				);
 			})}

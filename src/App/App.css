@@ -7,6 +7,15 @@
 	border: 1px solid black;
 	padding: 50px;
 	margin: 10px;
+	align-items: center;
+}
+.card-image img {
+	max-height: 150px;
+}
+.crewCard-image img {
+	max-height: 300px;
+}
+.launches {
 }
 
 nav {
@@ -18,6 +27,13 @@ nav {
 }
 .headerPhoto {
 	max-height: 75px;
+}
+.latestHeading,
+.sortButtons {
+	text-align: center;
+}
+.sortButtons Button {
+	margin: 0.5rem 3rem;
 }
 .links {
 	display: flex;

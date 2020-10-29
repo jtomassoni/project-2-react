@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
-const LaunchPadDetails = ({ match }) => {
+const LaunchpadDetails = ({ match }) => {
 	const [launchpad, setLaunchpad] = useState('');
 	let launchPadId = match.params.id;
 	let url = `https://api.spacexdata.com/v4/launchpads/${launchPadId}`;
@@ -11,7 +14,7 @@ const LaunchPadDetails = ({ match }) => {
 			.then((res) => {
 				setLaunchpad(res);
 			});
-		// eslint-disable-next-line;
+		//eslint-disable-next-line
 	}, []);
 	if (!launchpad) {
 		return null;
@@ -33,31 +36,53 @@ const LaunchPadDetails = ({ match }) => {
 					{launchpad.status.charAt(0).toUpperCase() + launchpad.status.slice(1)}
 				</h3>
 				<h3>Number of Attempts: {launchpad.launch_attempts}</h3>
-				<h3>
-					Rockets:{' '}
-					{launchpad.rockets.map((rocket) => {
-						return (
-							<ul>
-								<li>{rocket}</li>
-							</ul>
-						);
-					})}
-				</h3>
-				<h3>
-					Launches:{' '}
-					{launchpad.launches.map((launch) => {
-						return (
-							<ul>
-								<Link to={`/launches/${launch}`}>
-									<li>{launch}</li>
-								</Link>
-							</ul>
-						);
-					})}
-				</h3>
+				<Accordion>
+					<Card>
+						<Card.Header>
+							<Accordion.Toggle as={Button} variant='link' eventKey='0'>
+								Rockets
+							</Accordion.Toggle>
+						</Card.Header>
+						{launchpad.rockets.map((rocket) => {
+							return (
+								<Accordion.Collapse eventKey='0'>
+									<Card.Body>
+										<ul>
+											<Link to={`/launches/${rocket}`}>
+												<li>{rocket}</li>
+											</Link>
+										</ul>
+									</Card.Body>
+								</Accordion.Collapse>
+							);
+						})}
+					</Card>
+				</Accordion>
+				<Accordion>
+					<Card>
+						<Card.Header>
+							<Accordion.Toggle as={Button} variant='link' eventKey='0'>
+								Launches
+							</Accordion.Toggle>
+						</Card.Header>
+						{launchpad.launches.map((launch) => {
+							return (
+								<Accordion.Collapse eventKey='0'>
+									<Card.Body>
+										<ul>
+											<Link to={`/launches/${launch}`}>
+												<li>{launch}</li>
+											</Link>
+										</ul>
+									</Card.Body>
+								</Accordion.Collapse>
+							);
+						})}
+					</Card>
+				</Accordion>
 			</div>
 		</div>
 	);
 };
 
-export default LaunchPadDetails;
+export default LaunchpadDetails;
