@@ -46,6 +46,8 @@ const Crew = () => {
 				width: '50%',
 				display: 'flex',
 				justifyContent: 'space-between',
+				alignItems: 'center',
+				boxSizing: 'content-box',
 			}}>
 			<CardDeck>
 				{landpads.map((landpad) => {

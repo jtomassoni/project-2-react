@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
 const Home = () => {
 	return (
-		<Container style={{ height: '90vh' }}>
+		<Container style={{ height: '100vh' }}>
 			<Row>
 				<Col
 					style={{

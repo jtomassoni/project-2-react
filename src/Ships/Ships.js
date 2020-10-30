@@ -39,7 +39,7 @@ const TotalShips = () => {
 	}
 
 	return (
-		<CardDeck>
+		<CardDeck style={{textAlign:'center',}}>
 			{ships.map((ship) => {
 				return (
 					<Link

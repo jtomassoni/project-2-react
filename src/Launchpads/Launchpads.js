@@ -31,7 +31,7 @@ const TotalLaunchPads = () => {
 				<Row>
 					<Col md='auto'>
 						Loading...
-						<Spinner animation='grow' variant='info' />
+						<Spinner animation='grow' variant='success' />
 					</Col>
 				</Row>
 			</Container>
@@ -45,7 +45,10 @@ const TotalLaunchPads = () => {
 				height: '90vh',
 				width: '50%',
 				display: 'flex',
-				justifyContent: 'space-between',
+				justifyContent: 'space-around',
+				alignItems: 'center',
+				textAlign: 'center',
+				boxSizing: 'content-box',
 			}}>
 			<CardDeck>
 				{launchPads.map((launchpad) => {
@@ -59,7 +62,7 @@ const TotalLaunchPads = () => {
 									backgroundColor: 'rgba(255,255,255, 0)',
 									border: '2px white solid',
 									display: 'flex',
-									justifyContent: 'space-evenly'
+									justifyContent: 'space-evenly',
 								}}>
 								<Card.Body>
 									<Card.Title>{launchpad.name}</Card.Title>
