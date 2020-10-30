@@ -36,7 +36,7 @@ const LaunchDetails = ({ match }) => {
 				<Row>
 					<Col md='auto'>
 						Loading...
-						<Spinner animation='grow' variant='success' />
+						<Spinner animation='grow' variant='info' />
 					</Col>
 				</Row>
 			</Container>
@@ -94,11 +94,20 @@ const LaunchDetails = ({ match }) => {
 									<Carousel.Item
 										style={{
 											marginTop: '2rem',
-											maxHeight: '500px',
-											border: '2px solid #097ABD',
+											height: '400px',
 										}}
 										key={pic}>
-										<img src={pic} className='img-fluid' alt='launch' />
+										<img
+											src={pic}
+											style={{
+												height: '100%',
+												width: '100%',
+												objectFit: 'contain',
+												objectPosition: 'center',
+											}}
+											className='img-fluid'
+											alt='launch'
+										/>
 									</Carousel.Item>
 								);
 							})}
@@ -117,7 +126,6 @@ const LaunchDetails = ({ match }) => {
 				<Col
 					style={{
 						marginTop: '2rem',
-						border: '2px solid #097ABD',
 						textAlign: 'center',
 						lineHeight: '2rem',
 					}}>

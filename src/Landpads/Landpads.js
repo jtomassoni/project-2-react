@@ -26,12 +26,12 @@ const Crew = () => {
 					display: 'flex',
 					justifyContent: 'space-around',
 					alignItems: 'center',
-					height: '100vh',
+					height: '50vh',
 				}}>
 				<Row>
 					<Col md='auto'>
 						Loading...
-						<Spinner animation='grow' variant='success' />
+						<Spinner animation='grow' variant='info' />
 					</Col>
 				</Row>
 			</Container>
@@ -47,7 +47,6 @@ const Crew = () => {
 				display: 'flex',
 				justifyContent: 'space-between',
 			}}>
-			>
 			<CardDeck>
 				{landpads.map((landpad) => {
 					return (
@@ -64,7 +63,9 @@ const Crew = () => {
 								<Card.Body>
 									<Card.Title>{landpad.full_name}</Card.Title>
 									<Card.Subtitle className='mb-2 text-muted'>
-										{landpad.name}
+										Status:{' '}
+										{landpad.status.charAt(0).toUpperCase() +
+											landpad.status.slice(1)}
 									</Card.Subtitle>
 								</Card.Body>
 							</Card>

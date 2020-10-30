@@ -31,7 +31,7 @@ const TotalLaunchPads = () => {
 				<Row>
 					<Col md='auto'>
 						Loading...
-						<Spinner animation='grow' variant='success' />
+						<Spinner animation='grow' variant='info' />
 					</Col>
 				</Row>
 			</Container>

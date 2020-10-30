@@ -31,7 +31,7 @@ const Crew = () => {
 				<Row>
 					<Col md='auto'>
 						Loading...
-						<Spinner animation='grow' variant='success' />
+						<Spinner animation='grow' variant='info' />
 					</Col>
 				</Row>
 			</Container>
@@ -41,32 +41,40 @@ const Crew = () => {
 	return (
 		<Container
 			style={{
-				height: '90vh',
 				color: 'black',
 				display: 'flex',
 				justifyContent: 'space-around',
 				alignItems: 'center',
+				textAlign: 'center',
 			}}>
-			<div className='crewCards'>
-				<CardDeck>
-					{crew.map((crewMember) => {
-						return (
-							<Card key={crewMember.id}>
-								<Card.Img variant='top' src={crewMember.image} />
-								<Card.Body>
-									<Card.Title>{crewMember.name}</Card.Title>
-									<Card.Text>Launches: {crewMember.launches.length}</Card.Text>
-									<Card.Footer>
-										<Button href={crewMember.wikipedia} variant='primary'>
-											Learn More
-										</Button>
-									</Card.Footer>
-								</Card.Body>
-							</Card>
-						);
-					})}
-				</CardDeck>
-			</div>
+			<CardDeck>
+				{crew.map((crewMember) => {
+					return (
+						<Card
+							className='mt-5'
+							style={{ flexBasis: '300px' }}
+							key={crewMember.id}>
+							<Card.Img variant='top' src={crewMember.image} />
+							<Card.Body>
+								<Card.Title>{crewMember.name}</Card.Title>
+								<Card.Subtitle className='mb-2 text-muted'>
+									Agency: <em>{crewMember.agency}</em>
+								</Card.Subtitle>
+
+								<Card.Text>
+									Completed SpaceX Launches:{' '}
+									<em>{crewMember.launches.length}</em>
+								</Card.Text>
+								<Card.Footer>
+									<Button href={crewMember.wikipedia} variant='primary'>
+										Learn More
+									</Button>
+								</Card.Footer>
+							</Card.Body>
+						</Card>
+					);
+				})}
+			</CardDeck>
 		</Container>
 	);
 };

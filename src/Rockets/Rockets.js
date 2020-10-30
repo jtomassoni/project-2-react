@@ -35,7 +35,7 @@ const Crew = () => {
 				<Row>
 					<Col md='auto'>
 						Loading...
-						<Spinner animation='grow' variant='success' />
+						<Spinner animation='grow' variant='info' />
 					</Col>
 				</Row>
 			</Container>
@@ -43,7 +43,7 @@ const Crew = () => {
 	}
 
 	return (
-		<Container>
+		<Container style={{height: '90vh'}}>
 			<CardDeck style={{ padding: '3rem', color: 'black' }}>
 				{rockets.map((rocket) => {
 					return (
@@ -59,6 +59,9 @@ const Crew = () => {
 								<ListGroupItem>
 									First Flight:{' '}
 									<Moment format='YYYY-MM-DD'>{rocket.first_flight}</Moment>
+								</ListGroupItem>
+								<ListGroupItem>
+									Status: <em>{rocket.active ? 'Active' : 'Retired'}</em>
 								</ListGroupItem>
 							</ListGroup>
 							<Card.Body>

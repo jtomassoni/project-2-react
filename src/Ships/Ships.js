@@ -31,7 +31,7 @@ const TotalShips = () => {
 				<Row>
 					<Col md='auto'>
 						Loading...
-						<Spinner animation='grow' variant='success' />
+						<Spinner animation='grow' variant='info' />
 					</Col>
 				</Row>
 			</Container>
@@ -39,44 +39,43 @@ const TotalShips = () => {
 	}
 
 	return (
-			<CardDeck>
-				{ships.map((ship) => {
-					return (
-						<Link
-							to={`/ships/${ship.id}`}
-							key={ship.id}
-							style={{
-								margin: '2rem',
-								display: 'flex',
-								justifyContent: 'space-evenly',
-							}}>
-							<Card
-								style={{ width: '18rem', height: '23rem', padding: '2rem' }}>
-								{!ship.image ? (
-									<Card.Img
-										variant='top'
-										src={process.env.PUBLIC_URL + '/no_image_found.png'}
-										alt='not found'
-									/>
-								) : (
-									<Card.Img
-										variant='top'
-										src={ship.image}
-										className='img-thumbnail'
-										alt={ship.name}
-									/>
-								)}
-								<Card.Body>
-									<Card.Title className='text-center'>{ship.name}</Card.Title>
-									<Card.Subtitle className='mb-2 text-muted text-center'>
-										{ship.active ? 'Active' : 'Retired'}
-									</Card.Subtitle>
-								</Card.Body>
-							</Card>
-						</Link>
-					);
-				})}
-			</CardDeck>
+		<CardDeck>
+			{ships.map((ship) => {
+				return (
+					<Link
+						to={`/ships/${ship.id}`}
+						key={ship.id}
+						style={{
+							margin: '2rem',
+							display: 'flex',
+							justifyContent: 'space-evenly',
+						}}>
+						<Card style={{ width: '18rem', height: '23rem', padding: '2rem' }}>
+							{!ship.image ? (
+								<Card.Img
+									variant='top'
+									src={process.env.PUBLIC_URL + '/no_image_found.png'}
+									alt='not found'
+								/>
+							) : (
+								<Card.Img
+									variant='top'
+									src={ship.image}
+									className='img-thumbnail'
+									alt={ship.name}
+								/>
+							)}
+							<Card.Body>
+								<Card.Title className='text-center'>{ship.name}</Card.Title>
+								<Card.Subtitle className='mb-2 text-muted text-center'>
+									Status: <em>{ship.active ? 'Active' : 'Retired'}</em>
+								</Card.Subtitle>
+							</Card.Body>
+						</Card>
+					</Link>
+				);
+			})}
+		</CardDeck>
 	);
 };
 

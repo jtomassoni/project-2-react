@@ -28,13 +28,13 @@ Youre able to navigate between launch data as well as vehicles, launchpads, and 
 
 ## User Stories
 
-### MVP Goals
+### MVP Goals - DONE
 
 - As a user, I want to be able to see the latest SpaceX flight info.
 - As a user, I want to be able to see all of the SpaceX flights in a list.
 - As a user, I want to be able to click one of the spaceX flights in that list, and be brought to a details screen.
 
-### Stretch Goals
+### Stretch Goals - DONE
 
 - Any kind of filtering: mission type(Starlink, National Recon Office, NASA), vehicles used(rockets, recovery drone ships), date ranges.
 - Custom Sorting, oldest first, newest first.
@@ -57,12 +57,18 @@ SCreenshot.
 
 ## Unsolved Mysteries
 
-- By the time I had written the grid enough to make me happy, I realized bootstrap would be better for most, if not all of this project, so I tried to refactor a ton of it with bootsrap, which has resulted in some...weirdness.
-
-- Query/Pagination/LoadMore, I only wanted to show 10 launches unless the user clicked the "show more" button, until there were no more launches to view.
+- Query/Pagination/LoadMore.
+  - POST Query wouldn't work: I am n00b.
+  - Front-End Mod
+- Passing form Data
 
 ## Solved Mysteries
 
-- Bootstrap, somewhat.
+- Instead of filtering, I created a system where users could navigate between connected components.
 - Sorting the results of a return in reverse order.
-- github branches, pushing and merging make a little more sense
+- Not knowing how 100% of your code works is something I will have to keep getting used to. I feel like I have a much better handle on how to make React work for JT, rather than trying to understand how to React was working for React.
+- Bootstrap 101
+  - HOWEVER
+  - Don't get caught using Bootstrap Components without writing semantic code in conjunction. While React Bootstrap will make things pretty for you. It does not account for anything outside of visual interactions. This means we still must write(or have our JSX render) semantic HTML for accessibility.
+- Github
+- Asking for help: If you finished this week without using all or all of your tokens, ask yourself which parts of the project caused unnecessary stress, or stretch goals you could have

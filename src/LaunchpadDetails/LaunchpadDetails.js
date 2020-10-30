@@ -34,7 +34,7 @@ const LaunchpadDetails = ({ match }) => {
 				<Row>
 					<Col md='auto'>
 						Loading...
-						<Spinner animation='grow' variant='success' />
+						<Spinner animation='grow' variant='info' />
 					</Col>
 				</Row>
 			</Container>
@@ -42,67 +42,49 @@ const LaunchpadDetails = ({ match }) => {
 	}
 
 	return (
-		<div className='detailsContainer'>
-			<div className='detailsCard'>
-				<h2>Launchpad Name: {launchpad.name}</h2>
-				<h3>
-					<em>Full Name: {launchpad.full_name}</em>
-				</h3>
-				<h3>
-					Location: {launchpad.latitude},{launchpad.longitude}
-				</h3>
-				<p>{launchpad.details}</p>
-				<h3>
-					Status:{' '}
-					{launchpad.status.charAt(0).toUpperCase() + launchpad.status.slice(1)}
-				</h3>
-				<h3>Number of Attempts: {launchpad.launch_attempts}</h3>
-				<Accordion>
-					<Card>
-						<Card.Header>
-							<Accordion.Toggle as={Button} variant='link' eventKey='0'>
-								Rockets
-							</Accordion.Toggle>
-						</Card.Header>
-						{launchpad.rockets.map((rocket) => {
-							return (
-								<Accordion.Collapse eventKey='0'>
-									<Card.Body>
-										<ul>
-											<Link to={`/launches/${rocket}`}>
-												<li>{rocket}</li>
-											</Link>
-										</ul>
-									</Card.Body>
-								</Accordion.Collapse>
-							);
-						})}
-					</Card>
-				</Accordion>
-				<Accordion>
-					<Card>
-						<Card.Header>
-							<Accordion.Toggle as={Button} variant='link' eventKey='0'>
-								Launches
-							</Accordion.Toggle>
-						</Card.Header>
-						{launchpad.launches.map((launch) => {
-							return (
-								<Accordion.Collapse eventKey='0'>
-									<Card.Body>
-										<ul>
-											<Link to={`/launches/${launch}`}>
-												<li>{launch}</li>
-											</Link>
-										</ul>
-									</Card.Body>
-								</Accordion.Collapse>
-							);
-						})}
-					</Card>
-				</Accordion>
-			</div>
-		</div>
+		<Container
+			as='section'
+			style={{
+				padding: '1rem',
+				minHeight: '90vh',
+				height: '100%',
+			}}>
+			<h2>Launchpad Name: {launchpad.name}</h2>
+			<h3>
+				<em>Full Name: {launchpad.full_name}</em>
+			</h3>
+			<h3>
+				Location: {launchpad.latitude},{launchpad.longitude}
+			</h3>
+			<p>{launchpad.details}</p>
+			<h3>
+				Status:{' '}
+				{launchpad.status.charAt(0).toUpperCase() + launchpad.status.slice(1)}
+			</h3>
+			<h3>Number of Attempts: {launchpad.launch_attempts}</h3>
+			<Accordion>
+				<Card>
+					<Card.Header>
+						<Accordion.Toggle as={Button} variant='link' eventKey='0'>
+							Click to view Associated Launches
+						</Accordion.Toggle>
+					</Card.Header>
+					{launchpad.launches.map((launch) => {
+						return (
+							<Accordion.Collapse eventKey='0'>
+								<Card.Body>
+									<ul >
+										<Link to={`/launches/${launch}`}>
+											<li style={{ listStyleType: 'none', lineHeight: '1px' }}>{launch}</li>
+										</Link>
+									</ul>
+								</Card.Body>
+							</Accordion.Collapse>
+						);
+					})}
+				</Card>
+			</Accordion>
+		</Container>
 	);
 };
 

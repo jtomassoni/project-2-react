@@ -34,7 +34,7 @@ const ShipDetails = ({ match }) => {
 				<Row>
 					<Col md='auto'>
 						Loading...
-						<Spinner animation='grow' variant='success' />
+						<Spinner animation='grow' variant='info' />
 					</Col>
 				</Row>
 			</Container>
@@ -42,7 +42,8 @@ const ShipDetails = ({ match }) => {
 	}
 
 	return (
-		<Container style={{ textAlign: 'center', padding: '5rem' }}>
+		<Container
+			style={{ textAlign: 'center', padding: '5rem', height: '90vh' }}>
 			<Row style={{ borderBottom: '10px double #097ABD' }}>
 				<Col
 					style={{
@@ -52,7 +53,7 @@ const ShipDetails = ({ match }) => {
 						paddingTop: '1rem',
 					}}>
 					<h2>Ship Name: {ship.name}</h2>
-					<em>Status: {ship.active ? 'Active' : 'Retired'}</em>
+					Status: <em>{ship.active ? 'Active' : 'Retired'}</em>
 				</Col>
 			</Row>
 			<Row>
@@ -68,7 +69,7 @@ const ShipDetails = ({ match }) => {
 						<Dropdown.Toggle
 							style={{ backgroundColor: '#097ABD' }}
 							id='dropdown-basic'>
-							View Launch Data
+							Click for Specific Launch Data
 						</Dropdown.Toggle>
 						<Dropdown.Menu>
 							{ship.launches.map((launch) => {

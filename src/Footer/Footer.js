@@ -46,25 +46,25 @@ const Header = () => {
 				<Row>
 					<Col md='auto'>
 						Loading...
-						<Spinner animation='grow' variant='success' />
+						<Spinner animation='grow' variant='info' />
 					</Col>
 				</Row>
 			</Container>
 		);
 	}
 	return (
-		<Container fluid>
-			<Row
-				style={{
-					backgroundColor: 'rgba(0, 0, 0, 0.5)',
-					color: 'white',
-					display: 'flex',
-					justifyContent: 'space-around',
-					padding: '10px',
-				}}>
-				Built with love and React by JT
-			</Row>
-		</Container>
+		<footer
+			style={{
+				backgroundColor: 'rgba(0, 0, 0, 0.5)',
+				color: 'white',
+				padding: '10px',
+				textAlign: 'center',
+				alignItems: 'center',
+			}}>
+			<p>
+				Built with❤ and React by <a href='https://github.com/jtomassoni'>JT</a>
+			</p>
+		</footer>
 	);
 };
 

@@ -15,6 +15,7 @@ import LandpadDetails from '../LandpadDetails/LandpadDetails';
 import Roadster from '../Roadster/Roadster';
 import Container from 'react-bootstrap/Container';
 import Footer from '../Footer/Footer';
+import Home from '../Home/Home';
 
 function App() {
 	return (
@@ -25,12 +26,13 @@ function App() {
 				style={{
 					color: 'white',
 					backgroundImage: `url("https://i.imgur.com/wZoyIyI.png")`,
-					backgroundSize: '100%',
-					backgroundRepeat: 'repeat-y',
+					backgroundSize: 'cover',
+					// backgroundRepeat: '',
 					backgroundPosition: 'center',
-					// margin: '0 auto',
-					height: '91vh',
+					backgroundAttachment: 'fixed',
+					// height: '91vh',
 				}}>
+				<Route path='/latest' exact component={Latest} />
 				<Route path='/launches' exact component={Launches} />
 				<Route
 					path='/launches/:id'
@@ -62,8 +64,8 @@ function App() {
 				<Route path='/roadster' exact component={Roadster} />
 				<Route path='/crew' exact component={Crew} />
 				<Route path='/rockets' exact component={Rockets} />
-				<Route path='/latest' component={Latest} />
-				<Route path='/' exact render={() => <Redirect to='/latest' />} />
+				<Route path='/home' exact component={Home} />
+				<Route path='/' exact render={() => <Redirect to='/home' />} />
 			</Container>
 			<Footer />
 		</>
