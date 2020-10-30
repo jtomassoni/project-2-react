@@ -13,49 +13,56 @@ import Rockets from '../Rockets/Rockets';
 import Landpads from '../Landpads/Landpads';
 import LandpadDetails from '../LandpadDetails/LandpadDetails';
 import Roadster from '../Roadster/Roadster';
+import Container from 'react-bootstrap/Container';
 
 // import './App.css';
 
 function App() {
 	return (
-		<div className='App'>
+		<>
 			<Header />
-
-			<Route path='/launches' exact component={Launches} />
-			<Route
-				path='/launches/:id'
-				render={(routerProps) => {
-					return <LaunchDetails match={routerProps.match} />;
-				}}
-			/>
-			<Route path='/launchpads' exact component={Launchpads} />
-			<Route
-				path='/launchpads/:id'
-				render={(routerProps) => {
-					return <LaunchpadDetails match={routerProps.match} />;
-				}}
-			/>
-			<Route path='/ships' exact component={Ships} />
-			<Route
-				path='/ships/:id'
-				render={(routerProps) => {
-					return <ShipDetails match={routerProps.match} />;
-				}}
-			/>
-			<Route path='/landpads' exact component={Landpads} />
-			<Route
-				path='/landpads/:id'
-				render={(routerProps) => {
-					return <LandpadDetails match={routerProps.match} />;
-				}}
-			/>
-			<Route path='/roadster' exact component={Roadster} />
-			<Route path='/crew' exact component={Crew} />
-			<Route path='/rockets' exact component={Rockets} />
-			<Route path='/latest' component={Latest} />
-			<Route path='/' exact render={() => <Redirect to='/latest' />} />
-			{/* hello */}
-		</div>
+			<Container
+				style={{
+					color: 'white',
+					backgroundImage: `url("https://i.imgur.com/wZoyIyI.png")`,
+					backgroundSize: 'cover',
+					margin: '0',
+				}}>
+				<Route path='/launches' exact component={Launches} />
+				<Route
+					path='/launches/:id'
+					render={(routerProps) => {
+						return <LaunchDetails match={routerProps.match} />;
+					}}
+				/>
+				<Route path='/launchpads' exact component={Launchpads} />
+				<Route
+					path='/launchpads/:id'
+					render={(routerProps) => {
+						return <LaunchpadDetails match={routerProps.match} />;
+					}}
+				/>
+				<Route path='/ships' exact component={Ships} />
+				<Route
+					path='/ships/:id'
+					render={(routerProps) => {
+						return <ShipDetails match={routerProps.match} />;
+					}}
+				/>
+				<Route path='/landpads' exact component={Landpads} />
+				<Route
+					path='/landpads/:id'
+					render={(routerProps) => {
+						return <LandpadDetails match={routerProps.match} />;
+					}}
+				/>
+				<Route path='/roadster' exact component={Roadster} />
+				<Route path='/crew' exact component={Crew} />
+				<Route path='/rockets' exact component={Rockets} />
+				<Route path='/latest' component={Latest} />
+				<Route path='/' exact render={() => <Redirect to='/latest' />} />
+			</Container>
+		</>
 	);
 }
 

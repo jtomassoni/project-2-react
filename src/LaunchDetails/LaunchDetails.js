@@ -42,7 +42,7 @@ const LaunchDetails = ({ match }) => {
 
 	return (
 		<Container>
-			<Row style={{ borderBottom: '10px double black' }}>
+			<Row style={{ borderBottom: '10px double #097ABD' }}>
 				<Col
 					style={{
 						alignItems: 'center',
@@ -92,7 +92,7 @@ const LaunchDetails = ({ match }) => {
 										style={{
 											marginTop: '2rem',
 											maxHeight: '500px',
-											border: '2px solid black',
+											border: '2px solid #097ABD',
 										}}
 										key={pic}>
 										<img src={pic} className='img-fluid' alt='launch' />
@@ -114,7 +114,7 @@ const LaunchDetails = ({ match }) => {
 				<Col
 					style={{
 						marginTop: '2rem',
-						border: '2px solid black',
+						border: '2px solid #097ABD',
 						textAlign: 'center',
 						lineHeight: '2rem',
 					}}>

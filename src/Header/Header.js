@@ -47,7 +47,9 @@ const Header = () => {
 	}
 	return (
 		<Container fluid>
-			<Row style={{ backgroundColor: 'gray' }} className='align-items-center'>
+			<Row
+				style={{ backgroundColor: '#5C86A0' }}
+				className='align-items-center'>
 				<Col lg={6}>
 					<div className='logo'>
 						<Link to='/'>
@@ -62,37 +64,37 @@ const Header = () => {
 				</Col>
 				<Col>
 					<Link to='/launches'>
-						<Button variant='outline-dark'>Launches</Button>
+						<Button variant='outline-light'>Launches</Button>
 					</Link>
 				</Col>
 				<Col>
 					<Link to='/ships'>
-						<Button variant='outline-dark'>Ships</Button>
+						<Button variant='outline-light'>Ships</Button>
 					</Link>
 				</Col>
 				<Col>
 					<Link to='/rockets'>
-						<Button variant='outline-dark'>Rockets</Button>
+						<Button variant='outline-light'>Rockets</Button>
 					</Link>
 				</Col>
 				<Col>
 					<Link to='/launchpads'>
-						<Button variant='outline-dark'>Launchpads</Button>
+						<Button variant='outline-light'>Launchpads</Button>
 					</Link>
 				</Col>
 				<Col>
 					<Link to='/landpads'>
-						<Button variant='outline-dark'>Landpads</Button>
+						<Button variant='outline-light'>Landpads</Button>
 					</Link>
 				</Col>
 				<Col>
 					<Link to='/crew'>
-						<Button variant='outline-dark'>Crew</Button>
+						<Button variant='outline-light'>Crew</Button>
 					</Link>
 				</Col>
 				<Col>
 					<Link>
-						<Button variant='outline-dark' onClick={handleShowStarman}>
+						<Button variant='outline-light' onClick={handleShowStarman}>
 							Roadster
 						</Button>
 						<Modal
