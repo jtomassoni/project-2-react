@@ -14,7 +14,7 @@ import Landpads from '../Landpads/Landpads';
 import LandpadDetails from '../LandpadDetails/LandpadDetails';
 import Roadster from '../Roadster/Roadster';
 
-import './App.css';
+// import './App.css';
 
 function App() {
 	return (

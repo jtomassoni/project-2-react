@@ -30,14 +30,14 @@ Youre able to navigate between launch data as well as vehicles, launchpads, and 
 
 ### MVP Goals
 
-As a user, I want to be able to see the latest SpaceX flight info.
-As a user, I want to be able to see all of the SpaceX flights in a list.
-As a user, I want to be able to click one of the spaceX flights in that list, and be brought to a details screen.
+- As a user, I want to be able to see the latest SpaceX flight info.
+- As a user, I want to be able to see all of the SpaceX flights in a list.
+- As a user, I want to be able to click one of the spaceX flights in that list, and be brought to a details screen.
 
 ### Stretch Goals
 
-Any kind of filtering: mission type(Starlink, National Recon Office, NASA), vehicles used(rockets, recovery drone ships), date ranges.
-Or custom Sorting, oldest first, newest first.(two buttons)
+- Any kind of filtering: mission type(Starlink, National Recon Office, NASA), vehicles used(rockets, recovery drone ships), date ranges.
+- Custom Sorting, oldest first, newest first.
 
 ## Technologies Used
 
@@ -45,10 +45,11 @@ Or custom Sorting, oldest first, newest first.(two buttons)
 - React
 - CSS
 - Bootstrap
+- react-bootstrap.github.io
 
-##How to use
+## How to use
 
-- [Click here](jtx.herokuapp.com)
+[Click here](jtx.herokuapp.com)
 
 ## Screenshots
 
@@ -56,6 +57,12 @@ SCreenshot.
 
 ## Unsolved Mysteries
 
-- Git.Hub.
+- By the time I had written the grid enough to make me happy, I realized bootstrap would be better for most, if not all of this project, so I tried to refactor a ton of it with bootsrap, which has resulted in some...weirdness.
+
+- Query/Pagination/LoadMore, I only wanted to show 10 launches unless the user clicked the "show more" button, until there were no more launches to view.
 
 ## Solved Mysteries
+
+- Bootstrap, somewhat.
+- Sorting the results of a return in reverse order.
+- github branches, pushing and merging make a little more sense
