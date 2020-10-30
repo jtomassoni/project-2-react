@@ -34,21 +34,24 @@ const Crew = () => {
 	}
 
 	return (
-		<div className='container'>
+		<Container fluid>
 			<CardDeck>
 				{landpads.map((landpad) => {
 					return (
 						<Link to={`/landpads/${landpad.id}`}>
-							<Card style={{ width: '18rem' }} key={landpad.id}>
+							<Card style={{ width: '18rem', textAlign: 'center'}} key={landpad.id}>
 								<Card.Body>
 									<Card.Title>{landpad.full_name}</Card.Title>
+									<Card.Subtitle className='mb-2 text-muted'>
+										{landpad.name}
+									</Card.Subtitle>
 								</Card.Body>
 							</Card>
 						</Link>
 					);
 				})}
 			</CardDeck>
-		</div>
+		</Container>
 	);
 };
 

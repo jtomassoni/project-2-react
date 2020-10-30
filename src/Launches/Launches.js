@@ -7,19 +7,17 @@ import Container from 'react-bootstrap/Container';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Moment from 'react-moment';
 
 let launchesUrl = 'https://api.spacexdata.com/v4/launches';
 
 const Launches = () => {
 	const [launches, setLaunches] = useState([]);
-	const [reverseArr, setReverseArr] = useState(false);
-	// if reverseArr is false, display oldest to newest.
-	// if reverseArr is true, display oldest to newest.
 	useEffect(() => {
 		fetch(launchesUrl)
 			.then((res) => res.json())
 			.then((res) => {
-				setLaunches(res);
+				setLaunches(res.reverse());
 			})
 			.catch((error) => alert('API Fetch Error'));
 	}, []);
@@ -68,7 +66,7 @@ const Launches = () => {
 								justifyContent: 'space-evenly',
 							}}>
 							<Card
-								style={{ width: '18rem', height: '23rem', padding: '2rem' }}>
+								style={{ width: '20rem', height: '25rem', padding: '2rem' }}>
 								{!launch.links.patch.small ? (
 									<Card.Img
 										variant='top'
@@ -83,6 +81,9 @@ const Launches = () => {
 								)}
 								<Card.Body>
 									<Card.Title className='text-center'>{launch.name}</Card.Title>
+									<Card.Subtitle className='mb-2 text-muted text-center'>
+										<Moment parse='YYYY-MM-DD'> {launch.date_utc}</Moment>
+									</Card.Subtitle>
 								</Card.Body>
 							</Card>
 						</Link>

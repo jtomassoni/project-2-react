@@ -34,8 +34,8 @@ const TotalLaunchPads = () => {
 	}
 
 	return (
-		<div className='container'>
-			<CardDeck>
+		<Container fluid>
+			<CardDeck style={{ marginTop: '1rem' }}>
 				{launchPads.map((launchpad) => {
 					return (
 						<Link to={`/launchpads/${launchpad.id}`} key={launchpad.id}>
@@ -53,7 +53,7 @@ const TotalLaunchPads = () => {
 					);
 				})}
 			</CardDeck>
-		</div>
+		</Container>
 	);
 };
 
