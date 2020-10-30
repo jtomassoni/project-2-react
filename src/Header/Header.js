@@ -35,11 +35,18 @@ const Header = () => {
 	}, []);
 	if (roadster.length === 0) {
 		return (
-			<Container fluid>
+			<Container
+				fluid
+				style={{
+					display: 'flex',
+					justifyContent: 'space-around',
+					alignItems: 'center',
+					height: '100vh',
+				}}>
 				<Row>
 					<Col md='auto'>
 						Loading...
-						<Spinner animation='grow' variant='success' size='sm' />
+						<Spinner animation='grow' variant='success' />
 					</Col>
 				</Row>
 			</Container>
@@ -50,7 +57,7 @@ const Header = () => {
 			<Row
 				style={{ backgroundColor: '#5C86A0' }}
 				className='align-items-center'>
-				<Col lg={6}>
+				<Col lg={4}>
 					<div className='logo'>
 						<Link to='/'>
 							<img

@@ -4,6 +4,10 @@ import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
 import ReactPlayer from 'react-player';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Spinner from 'react-bootstrap/Spinner';
 
 const Roadster = () => {
 	const [showStarman, setShowStarman] = useState(true);
@@ -30,7 +34,23 @@ const Roadster = () => {
 			.catch((error) => alert('API Fetch Error'));
 	}, []);
 	if (!roadster) {
-		return null;
+		return (
+			<Container
+				fluid
+				style={{
+					display: 'flex',
+					justifyContent: 'space-around',
+					alignItems: 'center',
+					height: '100vh',
+				}}>
+				<Row>
+					<Col md='auto'>
+						Loading...
+						<Spinner animation='grow' variant='success' />
+					</Col>
+				</Row>
+			</Container>
+		);
 	}
 	return (
 		<div>

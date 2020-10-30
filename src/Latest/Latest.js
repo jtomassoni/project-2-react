@@ -3,6 +3,8 @@ import ReactPlayer from 'react-player'; //coderocketfuel, how to embed a YT vide
 import Carousel from 'react-bootstrap/Carousel';
 import Moment from 'react-moment';
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
 
 const LatestLaunch = () => {
@@ -19,16 +21,19 @@ const LatestLaunch = () => {
 	if (launch.length === 0) {
 		return (
 			<Container
+				fluid
 				style={{
 					display: 'flex',
 					justifyContent: 'space-around',
 					alignItems: 'center',
-					height: '50vh',
+					height: '100vh',
 				}}>
-				<div>
-					Loading...
-					<Spinner animation='grow' variant='success' size='sm' />
-				</div>
+				<Row>
+					<Col md='auto'>
+						Loading...
+						<Spinner animation='grow' variant='success' />
+					</Col>
+				</Row>
 			</Container>
 		);
 	}

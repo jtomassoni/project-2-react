@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Spinner from 'react-bootstrap/Spinner';
-import Container from 'react-bootstrap/Container';
 import CardDeck from 'react-bootstrap/CardDeck';
+import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Moment from 'react-moment';
@@ -25,22 +25,25 @@ const Launches = () => {
 	if (launches.length === 0) {
 		return (
 			<Container
+				fluid
 				style={{
 					display: 'flex',
 					justifyContent: 'space-around',
 					alignItems: 'center',
-					height: '50vh',
+					height: '100vh',
 				}}>
-				<div>
-					Loading...
-					<Spinner animation='grow' variant='success' size='sm' />
-				</div>
+				<Row>
+					<Col md='auto'>
+						Loading...
+						<Spinner animation='grow' variant='success' />
+					</Col>
+				</Row>
 			</Container>
 		);
 	}
 	return (
 		<>
-			<Container fluid>
+			<Container>
 				<Row className='justify-content-md-center'>
 					<Col md='auto'>
 						<Button
@@ -54,7 +57,7 @@ const Launches = () => {
 					</Col>
 				</Row>
 			</Container>
-			<CardDeck>
+			<CardDeck style={{ marginLeft: '5vw' }}>
 				{launches.map((launch) => {
 					return (
 						<Link

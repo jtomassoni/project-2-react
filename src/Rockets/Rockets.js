@@ -6,6 +6,10 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem';
 import Moment from 'react-moment';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Spinner from 'react-bootstrap/Spinner';
+
 
 let rocketsUrl = 'https://api.spacexdata.com/v4/rockets';
 const Crew = () => {
@@ -18,10 +22,29 @@ const Crew = () => {
 			})
 			.catch((error) => alert('API Fetch Error'));
 	}, []);
+	if (!rockets) {
+		return (
+			<Container
+				fluid
+				style={{
+					display: 'flex',
+					justifyContent: 'space-around',
+					alignItems: 'center',
+					height: '100vh',
+				}}>
+				<Row>
+					<Col md='auto'>
+						Loading...
+						<Spinner animation='grow' variant='success' />
+					</Col>
+				</Row>
+			</Container>
+		);
+	}
 
 	return (
 		<Container>
-			<CardDeck style={{ padding: '3rem', color: 'black'}}>
+			<CardDeck style={{ padding: '3rem', color: 'black' }}>
 				{rockets.map((rocket) => {
 					return (
 						<Card>
@@ -40,7 +63,9 @@ const Crew = () => {
 							</ListGroup>
 							<Card.Body>
 								<Card.Link href={rocket.wikipedia}>
-									<Button style={{backgroundColor: '#097ABD'}}>Learn More</Button>
+									<Button style={{ backgroundColor: '#097ABD' }}>
+										Learn More
+									</Button>
 								</Card.Link>
 							</Card.Body>
 						</Card>

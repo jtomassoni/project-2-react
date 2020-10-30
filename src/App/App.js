@@ -20,11 +20,14 @@ function App() {
 		<>
 			<Header />
 			<Container
+				fluid
 				style={{
 					color: 'white',
 					backgroundImage: `url("https://i.imgur.com/wZoyIyI.png")`,
-					backgroundSize: 'cover',
-					margin: '0',
+					backgroundSize: 'auto',
+					backgroundRepeat: 'repeat-v',
+					margin: '0 auto',
+					width: '100vw',
 				}}>
 				<Route path='/launches' exact component={Launches} />
 				<Route

@@ -26,16 +26,19 @@ const LaunchDetails = ({ match }) => {
 	if (launch.length === 0) {
 		return (
 			<Container
+				fluid
 				style={{
 					display: 'flex',
 					justifyContent: 'space-around',
 					alignItems: 'center',
-					height: '50vh',
+					height: '100vh',
 				}}>
-				<div>
-					Loading...
-					<Spinner animation='grow' variant='info' size='sm' />
-				</div>
+				<Row>
+					<Col md='auto'>
+						Loading...
+						<Spinner animation='grow' variant='success' />
+					</Col>
+				</Row>
 			</Container>
 		);
 	}

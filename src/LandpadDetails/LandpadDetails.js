@@ -3,22 +3,42 @@ import { Link } from 'react-router-dom';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Spinner from 'react-bootstrap/Spinner';
 
 const LandpadDetails = ({ match }) => {
 	const [landpad, setLandpad] = useState('');
 	let landpadId = match.params.id;
 	let url = `https://api.spacexdata.com/v4/landpads/${landpadId}`;
-	useEffect(() => {
-		fetch(url)
-			.then((res) => res.json())
-			.then((res) => {
-				setLandpad(res);
-			})
-			.catch((error) => alert('API Fetch Error'));
-		//eslint-disable-next-line
-	}, []);
-	if (!landpad) {
-		return null;
+	// useEffect(() => {
+	// 	fetch(url)
+	// 		.then((res) => res.json())
+	// 		.then((res) => {
+	// 			setLandpad(res);
+	// 		})
+	// 		.catch((error) => alert('API Fetch Error'));
+	// 	//eslint-disable-next-line
+	// }, []);
+	if (landpad.length === 0) {
+		return (
+			<Container
+				fluid
+				style={{
+					display: 'flex',
+					justifyContent: 'space-around',
+					alignItems: 'center',
+					height: '100vh',
+				}}>
+				<Row>
+					<Col md='auto'>
+						Loading...
+						<Spinner animation='grow' variant='success' />
+					</Col>
+				</Row>
+			</Container>
+		);
 	}
 
 	return (

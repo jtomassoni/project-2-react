@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
 import CardDeck from 'react-bootstrap/CardDeck';
 
@@ -19,16 +21,19 @@ const Crew = () => {
 	if (crew.length === 0) {
 		return (
 			<Container
+				fluid
 				style={{
 					display: 'flex',
 					justifyContent: 'space-around',
 					alignItems: 'center',
-					height: '50vh',
+					height: '100vh',
 				}}>
-				<div>
-					Loading...
-					<Spinner animation='grow' variant='success' size='sm' />
-				</div>
+				<Row>
+					<Col md='auto'>
+						Loading...
+						<Spinner animation='grow' variant='success' />
+					</Col>
+				</Row>
 			</Container>
 		);
 	}
@@ -39,7 +44,7 @@ const Crew = () => {
 				display: 'flex',
 				justifyContent: 'space-around',
 				alignItems: 'center',
-				height: '50vh',
+				height: '90vh',
 				color: 'black',
 			}}>
 			<div className='crewCards'>
