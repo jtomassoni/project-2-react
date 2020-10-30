@@ -27,14 +27,13 @@ const TotalShips = () => {
 				}}>
 				<div>
 					Loading...
-					<Spinner animation='grow' variant='success' size='sm' />
+					<Spinner animation='grow' variant='info' size='sm' />
 				</div>
 			</Container>
 		);
 	}
 
 	return (
-		<Container fluid>
 			<CardDeck>
 				{ships.map((ship) => {
 					return (
@@ -73,7 +72,6 @@ const TotalShips = () => {
 					);
 				})}
 			</CardDeck>
-		</Container>
 	);
 };
 

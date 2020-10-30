@@ -34,7 +34,7 @@ const LaunchDetails = ({ match }) => {
 				}}>
 				<div>
 					Loading...
-					<Spinner animation='grow' variant='success' size='sm' />
+					<Spinner animation='grow' variant='info' size='sm' />
 				</div>
 			</Container>
 		);

@@ -21,7 +21,7 @@ const Crew = () => {
 
 	return (
 		<Container>
-			<CardDeck style={{ margin: '1rem' }}>
+			<CardDeck style={{ padding: '3rem', color: 'black'}}>
 				{rockets.map((rocket) => {
 					return (
 						<Card>
@@ -40,7 +40,7 @@ const Crew = () => {
 							</ListGroup>
 							<Card.Body>
 								<Card.Link href={rocket.wikipedia}>
-									<Button>Learn More</Button>
+									<Button style={{backgroundColor: '#097ABD'}}>Learn More</Button>
 								</Card.Link>
 							</Card.Body>
 						</Card>

@@ -15,8 +15,6 @@ import LandpadDetails from '../LandpadDetails/LandpadDetails';
 import Roadster from '../Roadster/Roadster';
 import Container from 'react-bootstrap/Container';
 
-// import './App.css';
-
 function App() {
 	return (
 		<>
