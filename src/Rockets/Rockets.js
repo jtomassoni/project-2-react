@@ -20,11 +20,11 @@ const Crew = () => {
 	}, []);
 
 	return (
-		<div className='contdainer'>
-			<Container>
+		<Container>
+			<CardDeck style={{ margin: '1rem' }}>
 				{rockets.map((rocket) => {
 					return (
-						<CardDeck style={{ width: '18rem' }} key={rocket.id}>
+						<Card>
 							<Card.Img variant='top' src={rocket.flickr_images[0]} />
 							<Card.Body>
 								<Card.Title>{rocket.name}</Card.Title>
@@ -43,11 +43,11 @@ const Crew = () => {
 									<Button>Learn More</Button>
 								</Card.Link>
 							</Card.Body>
-						</CardDeck>
+						</Card>
 					);
 				})}
-			</Container>
-		</div>
+			</CardDeck>
+		</Container>
 	);
 };
 

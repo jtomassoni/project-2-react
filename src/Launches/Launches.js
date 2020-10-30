@@ -5,24 +5,21 @@ import Card from 'react-bootstrap/Card';
 import Spinner from 'react-bootstrap/Spinner';
 import Container from 'react-bootstrap/Container';
 import CardDeck from 'react-bootstrap/CardDeck';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Moment from 'react-moment';
 
 let launchesUrl = 'https://api.spacexdata.com/v4/launches';
 
 const Launches = () => {
 	const [launches, setLaunches] = useState([]);
-	const [reverseArr, setReverseArr] = useState(false);
-	// if reverseArr is false, display oldest to newest.
-	// if reverseArr is true, display oldest to newest.
 	useEffect(() => {
 		fetch(launchesUrl)
 			.then((res) => res.json())
 			.then((res) => {
-				setLaunches(res);
+				setLaunches(res.reverse());
 			})
 			.catch((error) => alert('API Fetch Error'));
-		// if (reverseArr) {
-
-		// }
 	}, []);
 
 	if (launches.length === 0) {
@@ -42,25 +39,34 @@ const Launches = () => {
 		);
 	}
 	return (
-		<Container>
-			<div className='sortButtons'>
-				<Button
-					variant='dark'
-					onClick={() => {
-						const tempArry = [...launches].reverse();
-						setLaunches(tempArry);
-					}}>
-					Oldest/Newest First
-				</Button>
-			</div>
+		<>
+			<Container fluid>
+				<Row className='justify-content-md-center'>
+					<Col md='auto'>
+						<Button
+							variant='dark'
+							onClick={() => {
+								const tempArry = [...launches].reverse();
+								setLaunches(tempArry);
+							}}>
+							Click to Sort by Oldest/Newest
+						</Button>
+					</Col>
+				</Row>
+			</Container>
 			<CardDeck>
 				{launches.map((launch) => {
 					return (
 						<Link
 							to={`/launches/${launch.id}`}
 							key={launch.id}
-							style={{ margin: '0 auto' }}>
-							<Card style={{ width: '18rem', height: '30rem' }}>
+							style={{
+								margin: '2rem',
+								display: 'flex',
+								justifyContent: 'space-evenly',
+							}}>
+							<Card
+								style={{ width: '20rem', height: '25rem', padding: '2rem' }}>
 								{!launch.links.patch.small ? (
 									<Card.Img
 										variant='top'
@@ -74,14 +80,17 @@ const Launches = () => {
 									/>
 								)}
 								<Card.Body>
-									<Card.Title>{launch.name}</Card.Title>
+									<Card.Title className='text-center'>{launch.name}</Card.Title>
+									<Card.Subtitle className='mb-2 text-muted text-center'>
+										<Moment parse='YYYY-MM-DD'> {launch.date_utc}</Moment>
+									</Card.Subtitle>
 								</Card.Body>
 							</Card>
 						</Link>
 					);
 				})}
 			</CardDeck>
-		</Container>
+		</>
 	);
 };
 

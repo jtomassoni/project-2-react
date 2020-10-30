@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Spinner from 'react-bootstrap/Spinner';
 import CardDeck from 'react-bootstrap/CardDeck';
+import Card from 'react-bootstrap/Card';
 
 let shipsUrl = 'https://api.spacexdata.com/v4/ships';
 const TotalShips = () => {
@@ -33,33 +34,46 @@ const TotalShips = () => {
 	}
 
 	return (
-		<div className='container'>
+		<Container fluid>
 			<CardDeck>
 				{ships.map((ship) => {
 					return (
-						<Link to={`/ships/${ship.id}`} key={ship.id}>
-							<div className='card'>
-								<h3>{ship.name}</h3>
-								<div className='card-image'>
-									{!ship.image ? (
-										<img
-											src={process.env.PUBLIC_URL + '/no_image_found.png'}
-											alt='not found'
-										/>
-									) : (
-										<img
-											src={ship.image}
-											className='img-thumbnail'
-											alt={ship.name}
-										/>
-									)}
-								</div>
-							</div>
+						<Link
+							to={`/ships/${ship.id}`}
+							key={ship.id}
+							style={{
+								margin: '2rem',
+								display: 'flex',
+								justifyContent: 'space-evenly',
+							}}>
+							<Card
+								style={{ width: '18rem', height: '23rem', padding: '2rem' }}>
+								{!ship.image ? (
+									<Card.Img
+										variant='top'
+										src={process.env.PUBLIC_URL + '/no_image_found.png'}
+										alt='not found'
+									/>
+								) : (
+									<Card.Img
+										variant='top'
+										src={ship.image}
+										className='img-thumbnail'
+										alt={ship.name}
+									/>
+								)}
+								<Card.Body>
+									<Card.Title className='text-center'>{ship.name}</Card.Title>
+									<Card.Subtitle className='mb-2 text-muted text-center'>
+										{ship.active ? 'Active' : 'Retired'}
+									</Card.Subtitle>
+								</Card.Body>
+							</Card>
 						</Link>
 					);
 				})}
 			</CardDeck>
-		</div>
+		</Container>
 	);
 };
 

@@ -5,8 +5,9 @@ import Modal from 'react-bootstrap/Modal';
 import Carousel from 'react-bootstrap/Carousel';
 import ReactPlayer from 'react-player';
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
-//Import Card or CardContainer/CardGroup/CardDeck
 
 const Header = () => {
 	const [showStarman, setShowStarman] = useState(false);
@@ -34,53 +35,64 @@ const Header = () => {
 	}, []);
 	if (roadster.length === 0) {
 		return (
-			<Container
-				style={{
-					display: 'flex',
-					justifyContent: 'space-around',
-					alignItems: 'center',
-					height: '50vh',
-				}}>
-				<div>
-					Loading...
-					<Spinner animation='grow' variant='success' size='sm' />
-				</div>
+			<Container fluid>
+				<Row>
+					<Col md='auto'>
+						Loading...
+						<Spinner animation='grow' variant='success' size='sm' />
+					</Col>
+				</Row>
 			</Container>
 		);
 	}
 	return (
-		<div className='header'>
-			<nav>
-				<div className='logo'>
-					<Link to='/'>
-						<img
-							className='headerPhoto'
-							src='https://cdn.pixabay.com/photo/2017/01/31/20/36/rocket-2027086_1280.png'
-							alt='rocket icon'
-						/>
-					</Link>
-				</div>
-				<div className='links'>
+		<Container fluid>
+			<Row style={{ backgroundColor: 'gray' }} className='align-items-center'>
+				<Col lg={6}>
+					<div className='logo'>
+						<Link to='/'>
+							<img
+								className='headerPhoto'
+								src='https://cdn.pixabay.com/photo/2017/01/31/20/36/rocket-2027086_1280.png'
+								alt='rocket icon'
+								height='75px'
+							/>
+						</Link>
+					</div>
+				</Col>
+				<Col>
 					<Link to='/launches'>
-						<Button variant='outline-light'>Launches</Button>
+						<Button variant='outline-dark'>Launches</Button>
 					</Link>
+				</Col>
+				<Col>
 					<Link to='/ships'>
-						<Button variant='outline-light'>Ships</Button>
+						<Button variant='outline-dark'>Ships</Button>
 					</Link>
+				</Col>
+				<Col>
 					<Link to='/rockets'>
-						<Button variant='outline-light'>Rockets</Button>
+						<Button variant='outline-dark'>Rockets</Button>
 					</Link>
+				</Col>
+				<Col>
 					<Link to='/launchpads'>
-						<Button variant='outline-light'>Launchpads</Button>
+						<Button variant='outline-dark'>Launchpads</Button>
 					</Link>
+				</Col>
+				<Col>
 					<Link to='/landpads'>
-						<Button variant='outline-light'>Landpads</Button>
+						<Button variant='outline-dark'>Landpads</Button>
 					</Link>
+				</Col>
+				<Col>
 					<Link to='/crew'>
-						<Button variant='outline-light'>Crew</Button>
+						<Button variant='outline-dark'>Crew</Button>
 					</Link>
+				</Col>
+				<Col>
 					<Link>
-						<Button variant='outline-light' onClick={handleShowStarman}>
+						<Button variant='outline-dark' onClick={handleShowStarman}>
 							Roadster
 						</Button>
 						<Modal
@@ -147,8 +159,10 @@ const Header = () => {
 
 										<Link
 											to={'launches/5eb87d13ffd86e000604b360'}
-											onClick={handleCloseYoutube}
-											onClick={handleCloseStarman}>
+											onClick={() => {
+												handleCloseYoutube();
+												handleCloseStarman();
+											}}>
 											<Button variant='secondary'>
 												Click for Launch Details
 											</Button>
@@ -158,10 +172,9 @@ const Header = () => {
 							</Modal.Footer>
 						</Modal>{' '}
 					</Link>
-				</div>
-			</nav>
-			<main></main>
-		</div>
+				</Col>
+			</Row>
+		</Container>
 	);
 };
 
