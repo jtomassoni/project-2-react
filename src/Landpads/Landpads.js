@@ -39,17 +39,26 @@ const Crew = () => {
 	}
 
 	return (
-		<Container fluid style={{ height: '90vh' }}>
+		<Container
+			fluid
+			style={{
+				height: '90vh',
+				width: '50%',
+				display: 'flex',
+				justifyContent: 'space-between',
+			}}>
+			>
 			<CardDeck>
 				{landpads.map((landpad) => {
 					return (
 						<Link to={`/landpads/${landpad.id}`}>
 							<Card
 								style={{
+									marginTop: '5rem',
 									width: '18rem',
 									textAlign: 'center',
 									backgroundColor: 'rgba(255,255,255, 0)',
-									border: '2px white solid'
+									border: '2px white solid',
 								}}
 								key={landpad.id}>
 								<Card.Body>

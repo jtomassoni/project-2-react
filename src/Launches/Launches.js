@@ -57,7 +57,8 @@ const Launches = () => {
 					</Col>
 				</Row>
 			</Container>
-			<CardDeck style={{ marginLeft: '5vw' }}>
+			<CardDeck
+				className='justify-content-center'>
 				{launches.map((launch) => {
 					return (
 						<Link

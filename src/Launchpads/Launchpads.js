@@ -39,12 +39,28 @@ const TotalLaunchPads = () => {
 	}
 
 	return (
-		<Container fluid>
-			<CardDeck style={{ marginTop: '1rem' }}>
+		<Container
+			fluid
+			style={{
+				height: '90vh',
+				width: '50%',
+				display: 'flex',
+				justifyContent: 'space-between',
+			}}>
+			<CardDeck>
 				{launchPads.map((launchpad) => {
 					return (
 						<Link to={`/launchpads/${launchpad.id}`} key={launchpad.id}>
-							<Card style={{ width: '18rem' }}>
+							<Card
+								style={{
+									marginTop: '5rem',
+									width: '18rem',
+									textAlign: 'center',
+									backgroundColor: 'rgba(255,255,255, 0)',
+									border: '2px white solid',
+									display: 'flex',
+									justifyContent: 'space-evenly'
+								}}>
 								<Card.Body>
 									<Card.Title>{launchpad.name}</Card.Title>
 									<Card.Subtitle className='mb-2 text-muted'>

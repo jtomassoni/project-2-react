@@ -41,19 +41,17 @@ const Crew = () => {
 	return (
 		<Container
 			style={{
+				height: '90vh',
+				color: 'black',
 				display: 'flex',
 				justifyContent: 'space-around',
 				alignItems: 'center',
-				height: '90vh',
-				color: 'black',
 			}}>
 			<div className='crewCards'>
 				<CardDeck>
 					{crew.map((crewMember) => {
 						return (
-							<Card
-								style={{ width: '10rem', backgroundOpacity: '0' }}
-								key={crewMember.id}>
+							<Card key={crewMember.id}>
 								<Card.Img variant='top' src={crewMember.image} />
 								<Card.Body>
 									<Card.Title>{crewMember.name}</Card.Title>
