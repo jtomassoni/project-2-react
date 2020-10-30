@@ -57,7 +57,7 @@ const Header = () => {
 			style={{
 				backgroundColor: 'rgba(0, 0, 0, 0.5)',
 				color: 'white',
-				padding: '10px',
+				padding: '6px',
 				textAlign: 'center',
 				alignItems: 'center',
 			}}>

@@ -143,9 +143,6 @@ const LatestLaunch = () => {
 					)}
 				</Col>
 			</Row>
-			{/* <div className='detailsVehiclesUsed'>
-				{launch.ships.map(())}
-			</div> */}
 		</Container>
 	);
 };

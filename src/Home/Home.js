@@ -11,10 +11,13 @@ const Home = () => {
 					style={{
 						textAlign: 'center',
 						borderBottom: '4px solid #5C86A0',
-						marginTop: '8rem',
-						marginBottom: '8rem',
+						marginTop: '2rem',
+						paddingBottom: '2rem',
+						marginBottom: '2rem'
 					}}>
-					<h1>Welcome to jtX</h1>
+					<h1>
+						Welcome to <img src='https://i.imgur.com/NxwMIf2.png' style={{maxWidth: '400px'}}/>
+					</h1>
 					<h5>
 						We <em>try </em> to do cool spacey things.
 					</h5>
