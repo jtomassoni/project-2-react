@@ -68,7 +68,7 @@ const Launches = () => {
 								justifyContent: 'space-evenly',
 							}}>
 							<Card
-								style={{ width: '18rem', height: '23rem', margin: '.5rem' }}>
+								style={{ width: '18rem', height: '23rem', padding: '2rem' }}>
 								{!launch.links.patch.small ? (
 									<Card.Img
 										variant='top'
