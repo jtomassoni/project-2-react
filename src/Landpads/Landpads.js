@@ -42,12 +42,10 @@ const Crew = () => {
 		<Container
 			fluid
 			style={{
-				height: '90vh',
-				width: '50%',
 				display: 'flex',
-				justifyContent: 'space-between',
+				justifyContent: 'space-around',
 				alignItems: 'center',
-				boxSizing: 'content-box',
+				textAlign: 'center',
 			}}>
 			<CardDeck>
 				{landpads.map((landpad) => {

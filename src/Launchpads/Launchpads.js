@@ -42,13 +42,10 @@ const TotalLaunchPads = () => {
 		<Container
 			fluid
 			style={{
-				height: '90vh',
-				width: '50%',
 				display: 'flex',
 				justifyContent: 'space-around',
 				alignItems: 'center',
 				textAlign: 'center',
-				boxSizing: 'content-box',
 			}}>
 			<CardDeck>
 				{launchPads.map((launchpad) => {
