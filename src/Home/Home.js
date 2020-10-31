@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
 const Home = () => {
 	return (
-		<Container style={{ height: '100vh' }}>
+		<Container>
 			<Row>
 				<Col
 					style={{
@@ -13,10 +13,15 @@ const Home = () => {
 						borderBottom: '4px solid #5C86A0',
 						marginTop: '2rem',
 						paddingBottom: '2rem',
-						marginBottom: '2rem'
+						marginBottom: '2rem',
 					}}>
 					<h1>
-						Welcome to <img src='https://i.imgur.com/NxwMIf2.png' style={{maxWidth: '400px'}}/>
+						Welcome to{' '}
+						<img
+							src='https://i.imgur.com/NxwMIf2.png'
+							alt='jtxlogo'
+							style={{ maxWidth: '400px' }}
+						/>
 					</h1>
 					<h5>
 						We <em>try </em> to do cool spacey things.

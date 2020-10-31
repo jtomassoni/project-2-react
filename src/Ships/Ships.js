@@ -39,43 +39,52 @@ const TotalShips = () => {
 	}
 
 	return (
-		<CardDeck style={{textAlign:'center',}}>
-			{ships.map((ship) => {
-				return (
-					<Link
-						to={`/ships/${ship.id}`}
-						key={ship.id}
-						style={{
-							margin: '2rem',
-							display: 'flex',
-							justifyContent: 'space-evenly',
-						}}>
-						<Card style={{ width: '18rem', height: '23rem', padding: '2rem' }}>
-							{!ship.image ? (
-								<Card.Img
-									variant='top'
-									src={process.env.PUBLIC_URL + '/no_image_found.png'}
-									alt='not found'
-								/>
-							) : (
-								<Card.Img
-									variant='top'
-									src={ship.image}
-									className='img-thumbnail'
-									alt={ship.name}
-								/>
-							)}
-							<Card.Body>
-								<Card.Title className='text-center'>{ship.name}</Card.Title>
-								<Card.Subtitle className='mb-2 text-muted text-center'>
-									Status: <em>{ship.active ? 'Active' : 'Retired'}</em>
-								</Card.Subtitle>
-							</Card.Body>
-						</Card>
-					</Link>
-				);
-			})}
-		</CardDeck>
+		<Container
+			fluid
+			style={
+				{
+					// display: 'flex',
+					// justifyContent: 'space-between',
+					// alignItems: 'center',
+					// textAlign: 'center',
+				}
+			}>
+			<CardDeck style={{ margin: '2rem' }}>
+				{ships.map((ship) => {
+					return (
+						<Link to={`/ships/${ship.id}`} key={ship.id}>
+							<Card
+								style={{
+									padding: '2rem',
+								}}>
+								{!ship.image ? (
+									<Card.Img
+										style={{ maxHeight: '200px' }}
+										variant='top'
+										src={process.env.PUBLIC_URL + '/no_image_found.png'}
+										alt='not found'
+									/>
+								) : (
+									<Card.Img
+										style={{ height: '200px', width: '200px' }}
+										variant='top'
+										src={ship.image}
+										className='img-thumbnail'
+										alt={ship.name}
+									/>
+								)}
+								<Card.Body>
+									<Card.Title className='text-center'>{ship.name}</Card.Title>
+									<Card.Subtitle className='mb-2 text-muted text-center'>
+										Status: <em>{ship.active ? 'Active' : 'Retired'}</em>
+									</Card.Subtitle>
+								</Card.Body>
+							</Card>
+						</Link>
+					);
+				})}
+			</CardDeck>
+		</Container>
 	);
 };
 
