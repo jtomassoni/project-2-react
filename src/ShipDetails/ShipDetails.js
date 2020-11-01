@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Spinner from 'react-bootstrap/Spinner';
 import Row from 'react-bootstrap/Row';
@@ -42,8 +41,7 @@ const ShipDetails = ({ match }) => {
 	}
 
 	return (
-		<Container
-			style={{ textAlign: 'center', padding: '5rem', height: '90vh' }}>
+		<Container style={{ textAlign: 'center', padding: '5rem', height: '90vh' }}>
 			<Row style={{ borderBottom: '10px double #097ABD' }}>
 				<Col
 					style={{

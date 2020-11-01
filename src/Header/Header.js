@@ -86,6 +86,9 @@ const Header = () => {
 							<NavDropdown.Item href='/launches/5eb87cf3ffd86e000604b345'>
 								First DroneShip Landing
 							</NavDropdown.Item>
+							<NavDropdown.Item href='launches/5eb87d13ffd86e000604b360'>
+								Falcon Heavy Launch
+							</NavDropdown.Item>
 						</NavDropdown>
 						<Nav.Link onClick={handleShowStarman}>Starman</Nav.Link>
 					</Nav>
