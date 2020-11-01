@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import Spinner from 'react-bootstrap/Spinner';
 import Container from 'react-bootstrap/Container';
-import CardDeck from 'react-bootstrap/CardDeck';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Moment from 'react-moment';

@@ -14,10 +14,6 @@ const Roadster = () => {
 	const handleCloseStarman = () => {
 		setShowStarman(false);
 	};
-	const handleShowStarman = () => {
-		handleCloseYoutube();
-		setShowStarman(true);
-	};
 
 	const [showYoutube, setShowYoutube] = useState(false);
 	const handleCloseYoutube = () => setShowYoutube(false);
@@ -101,8 +97,10 @@ const Roadster = () => {
 						<Modal.Footer>
 							<Link
 								to={'/'}
-								onClick={handleCloseYoutube}
-								onClick={handleCloseStarman}>
+								onClick={() => {
+									handleCloseYoutube();
+									handleCloseStarman();
+								}}>
 								<Button variant='secondary' onClick={handleCloseStarman}>
 									Close
 								</Button>
@@ -110,8 +108,10 @@ const Roadster = () => {
 
 							<Link
 								to={'launches/5eb87d13ffd86e000604b360'}
-								onClick={handleCloseYoutube}
-								onClick={handleCloseStarman}>
+								onClick={() => {
+									handleCloseYoutube();
+									handleCloseStarman();
+								}}>
 								<Button variant='secondary'>Click for Launch Details</Button>
 							</Link>
 						</Modal.Footer>
