@@ -37,7 +37,7 @@ What I have built for you is an app that displays spaceX launch data and allows 
 
 ## How to use
 
-[Click here](jtx.herokuapp.com)
+[Click here](https://jtx.herokuapp.com)
 
 ## Screenshots
 
