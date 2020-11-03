@@ -98,13 +98,16 @@ const LatestLaunch = () => {
 							})}
 						</Carousel>
 					) : (
-						<>
+						<section
+							style={{
+								textAlign: 'center',
+							}}>
 							<img
 								src={process.env.PUBLIC_URL + '/no_image_found.png'}
 								alt={launch.name}
 							/>
 							<p>There are no photos to display</p>
-						</>
+						</section>
 					)}
 				</Col>
 
@@ -126,11 +129,16 @@ const LatestLaunch = () => {
 			<Row className='justify-content-center'>
 				<Col
 					md='auto'
-					style={{ margin: '5rem', boxShadow: '0 0 20px 50px', padding: 0 }}>
+					style={{
+						margin: '5rem',
+						boxShadow: '0 0 20px 50px',
+						padding: 0,
+					}}>
 					{launch.links.youtube_id !== null ? (
 						<ReactPlayer
 							url={`https://www.youtube.com/watch?v=${launch.links.youtube_id}`}
 							controls={true}
+							width='50vh'
 						/>
 					) : (
 						<>
