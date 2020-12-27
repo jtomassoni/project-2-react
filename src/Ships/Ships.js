@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card';
+import './ShipsStyles.css';
 
 let shipsUrl = 'https://api.spacexdata.com/v4/ships';
 const TotalShips = () => {
@@ -16,7 +17,7 @@ const TotalShips = () => {
 			.then((res) => {
 				setShips(res);
 			})
-			.catch((error) => alert('API Fetch Error'));
+			.catch(console.error());
 	}, []);
 	if (ships.length === 0) {
 		return (
@@ -39,39 +40,26 @@ const TotalShips = () => {
 	}
 
 	return (
-		<Container
-			fluid
-			style={
-				{
-					// display: 'flex',
-					// justifyContent: 'space-between',
-					// alignItems: 'center',
-					// textAlign: 'center',
-				}
-			}>
-			<CardDeck style={{ margin: '2rem' }}>
+		<Container fluid>
+			<CardDeck
+				style={{
+					alignItems: 'center',
+					display: 'flex',
+					justifyContent: 'space-around',
+				}}>
 				{ships.map((ship) => {
 					return (
 						<Link to={`/ships/${ship.id}`} key={ship.id}>
 							<Card
-								style={{
-									padding: '2rem',
-								}}>
+								className='CardStyle'>
 								{!ship.image ? (
 									<Card.Img
-										style={{ maxHeight: '200px' }}
 										variant='top'
 										src={process.env.PUBLIC_URL + '/no_image_found.png'}
 										alt='not found'
 									/>
 								) : (
-									<Card.Img
-										style={{ height: '200px', width: '200px' }}
-										variant='top'
-										src={ship.image}
-										className='img-thumbnail'
-										alt={ship.name}
-									/>
+									<Card.Img variant='top' src={ship.image} alt={ship.name} />
 								)}
 								<Card.Body>
 									<Card.Title className='text-center'>{ship.name}</Card.Title>

@@ -6,12 +6,14 @@ const Header = () => {
 			style={{
 				backgroundColor: 'rgba(0, 0, 0, 0.5)',
 				color: 'white',
-				padding: '6px',
+				padding: '.5rem',
 				textAlign: 'center',
-				alignItems: 'center',
+				display: 'flex',
+				justifyContent: 'space-around',
 			}}>
 			<p>
-				Built with❤ and <a href='https://react-bootstrap.github.io/'>React</a> by <a href='https://github.com/jtomassoni'>JT</a>
+				Built with❤ and <a href='https://react-bootstrap.github.io/'>React</a>{' '}
+				by <a href='https://github.com/jtomassoni'>JT</a>
 			</p>
 		</footer>
 	);

@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
-
+import './LaunchpadDetailsStyle.css'
 const LaunchpadDetails = ({ match }) => {
 	const [launchpad, setLaunchpad] = useState('');
 	let launchPadId = match.params.id;
@@ -42,13 +42,7 @@ const LaunchpadDetails = ({ match }) => {
 	}
 
 	return (
-		<Container
-			as='section'
-			style={{
-				padding: '1rem',
-				minHeight: '90vh',
-				height: '100%',
-			}}>
+		<Container>
 			<h2>Launchpad Name: {launchpad.name}</h2>
 			<h3>
 				<em>Full Name: {launchpad.full_name}</em>

@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Moment from 'react-moment';
 import Carousel from 'react-bootstrap/Carousel';
-import './LaunchDetails.css';
+import './LaunchDetailsStyle.css';
 
 const LaunchDetails = ({ match }) => {
 	const [launch, setLaunch] = useState('');

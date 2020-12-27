@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
+import './LaunchpadsStyle.css';
 
 let launchPadsUrl = 'https://api.spacexdata.com/v4/launchpads';
 const TotalLaunchPads = () => {
@@ -39,28 +40,12 @@ const TotalLaunchPads = () => {
 	}
 
 	return (
-		<Container
-			fluid
-			style={{
-				display: 'flex',
-				justifyContent: 'space-around',
-				alignItems: 'center',
-				textAlign: 'center',
-			}}>
+		<Container className='containerStyle'>
 			<CardDeck>
 				{launchPads.map((launchpad) => {
 					return (
 						<Link to={`/launchpads/${launchpad.id}`} key={launchpad.id}>
-							<Card
-								style={{
-									marginTop: '5rem',
-									width: '18rem',
-									textAlign: 'center',
-									backgroundColor: 'rgba(255,255,255, 0)',
-									border: '2px white solid',
-									display: 'flex',
-									justifyContent: 'space-evenly',
-								}}>
+							<Card className='cardStyle'>
 								<Card.Body>
 									<Card.Title>{launchpad.name}</Card.Title>
 									<Card.Subtitle className='mb-2 text-muted'>

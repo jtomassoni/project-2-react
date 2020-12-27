@@ -1,0 +1,16 @@
+.containerStyle {
+	height: 90vh;
+	display: flex;
+	align-items: center;
+}
+
+.cardStyle {
+	background: rgba(255, 255, 255, 0);
+	border: 2px solid #ffffff;
+	margin: 1rem;
+}
+
+.deckStyle {
+	display: flex;
+	justify-content: space-between;
+}

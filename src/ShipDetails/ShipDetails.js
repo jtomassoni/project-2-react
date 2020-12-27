@@ -41,21 +41,28 @@ const ShipDetails = ({ match }) => {
 	}
 
 	return (
-		<Container style={{ textAlign: 'center', padding: '5rem', height: '90vh' }}>
-			<Row style={{ borderBottom: '10px double #097ABD' }}>
-				<Col
-					style={{
-						border: '4px solid gray',
-						margin: '4rem',
-						lineHeight: '5rem',
-						paddingTop: '1rem',
-					}}>
-					<h2>Ship Name: {ship.name}</h2>
+		<Container>
+			<Row style={{ borderBottom: '2px solid #097ABD', textAlign: 'center' }}>
+				<Col>
+					<h1>Ship Name: {ship.name}</h1>
+					{ship.image ? (
+						<img src={ship.image} className='img-thumbnail' alt={ship.name} />
+					) : (
+						<>
+							<img
+								src={process.env.PUBLIC_URL + '/no_image_found.png'}
+								alt='not found'
+							/>
+							<p>There are no images of this ship.</p>
+						</>
+					)}
+					<p>
 					Status: <em>{ship.active ? 'Active' : 'Retired'}</em>
+					</p>
 				</Col>
 			</Row>
 			<Row>
-				<Col style={{ textAlign: 'center', margin: '2rem' }}>
+				<Col style={{ margin: '2rem', textAlign: 'center' }}>
 					<ListGroup style={{ color: 'black', backgroundColor: '#097ABD' }}>
 						SpaceX Roles
 						{ship.roles.map((role) => {
@@ -63,11 +70,11 @@ const ShipDetails = ({ match }) => {
 						})}
 					</ListGroup>
 
-					<Dropdown style={{ margin: '4rem' }}>
+					<Dropdown style={{ margin: '1rem' }}>
 						<Dropdown.Toggle
 							style={{ backgroundColor: '#097ABD' }}
 							id='dropdown-basic'>
-							Click for Specific Launch Data
+							Launches with {ship.name} in operation
 						</Dropdown.Toggle>
 						<Dropdown.Menu>
 							{ship.launches.map((launch) => {
@@ -88,19 +95,6 @@ const ShipDetails = ({ match }) => {
 							More More Info from MarineTraffic.com
 						</Button>
 					</a>
-				</Col>
-				<Col style={{ padding: '2rem' }}>
-					{ship.image ? (
-						<img src={ship.image} className='img-thumbnail' alt={ship.name} />
-					) : (
-						<>
-							<img
-								src={process.env.PUBLIC_URL + '/no_image_found.png'}
-								alt='not found'
-							/>
-							<p>There are no images of this ship.</p>
-						</>
-					)}
 				</Col>
 			</Row>
 		</Container>

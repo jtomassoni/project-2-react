@@ -16,7 +16,7 @@ const Crew = () => {
 			.then((res) => {
 				setCrew(res);
 			})
-			.catch((error) => alert('API Fetch Error'));
+			.catch(console.error());
 	}, []);
 	if (crew.length === 0) {
 		return (
@@ -66,8 +66,8 @@ const Crew = () => {
 									<em>{crewMember.launches.length}</em>
 								</Card.Text>
 								<Card.Footer>
-									<Button href={crewMember.wikipedia} variant='primary'>
-										Learn More
+									<Button  variant='dark'>
+										Click to learn More
 									</Button>
 								</Card.Footer>
 							</Card.Body>
