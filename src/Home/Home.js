@@ -24,7 +24,7 @@ const Home = () => {
 			</Row>
 			<Row style={{ textAlign: 'center' }}>
 				<Col>
-					<Carousel style={{ marginBottom: '2rem' }}>
+					<Carousel className='carousel'>
 						<Carousel.Item key={'https://i.imgur.com/CbupccT.jpg'}>
 							<img
 								src={'https://i.imgur.com/CbupccT.jpg'}
@@ -68,7 +68,6 @@ const Home = () => {
 							/>
 						</Carousel.Item>
 					</Carousel>
-				</Col>
 				<Col>
 					<p>
 						If you've made it this far, it means you're good at a lot of things,
@@ -86,6 +85,7 @@ const Home = () => {
 						you find this content easy to navigate and relatively interesting.
 						Thanks for stopping by!
 					</p>
+				</Col>
 				</Col>
 			</Row>
 		</Container>

@@ -8,6 +8,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Moment from 'react-moment';
+import './Launches.css';
 
 let launchesUrl = 'https://api.spacexdata.com/v4/launches';
 
@@ -19,7 +20,7 @@ const Launches = () => {
 			.then((res) => {
 				setLaunches(res.reverse());
 			})
-			.catch((error) => alert('API Fetch Error'));
+			.catch(console.error());
 	}, []);
 
 	if (launches.length === 0) {
@@ -43,57 +44,51 @@ const Launches = () => {
 	}
 	return (
 		<>
-			<Container>
-				<Row className='justify-content-md-center'>
-					<Col md='auto'>
-						<Button
-							variant='dark'
-							onClick={() => {
-								const tempArry = [...launches].reverse();
-								setLaunches(tempArry);
-							}}>
-							Click to Sort by Oldest/Newest
-						</Button>
-					</Col>
-				</Row>
+			<Container fluid>
+				<Button
+					block
+					variant='dark'
+					onClick={() => {
+						const tempArry = [...launches].reverse();
+						setLaunches(tempArry);
+					}}>
+					Click to Sort by Oldest/Newest
+				</Button>
+				<CardDeck className='justify-content-center'>
+					{launches.map((launch) => {
+						return (
+							<Link
+								to={`/launches/${launch.id}`}
+								key={launch.id}
+								className='LinkStyle'>
+								<Card>
+									{!launch.links.patch.small ? (
+										<Card.Img
+											variant='top'
+											src={process.env.PUBLIC_URL + '/no_image_found.png'}
+											alt='not found'
+										/>
+									) : (
+										<Card.Img
+											variant='top'
+											src={launch.links.patch.small}
+											alt={`small ${launch.name} patch`}
+										/>
+									)}
+									<Card.Body>
+										<Card.Title className='text-center'>
+											{launch.name}
+										</Card.Title>
+										<Card.Subtitle className='mb-2 text-muted text-center'>
+											<Moment parse='YYYY-MM-DD'> {launch.date_utc}</Moment>
+										</Card.Subtitle>
+									</Card.Body>
+								</Card>
+							</Link>
+						);
+					})}
+				</CardDeck>
 			</Container>
-			<CardDeck
-				className='justify-content-center'>
-				{launches.map((launch) => {
-					return (
-						<Link
-							to={`/launches/${launch.id}`}
-							key={launch.id}
-							style={{
-								margin: '2rem',
-								display: 'flex',
-								justifyContent: 'space-evenly',
-							}}>
-							<Card
-								style={{ width: '20rem', height: '25rem', padding: '2rem' }}>
-								{!launch.links.patch.small ? (
-									<Card.Img
-										variant='top'
-										src={process.env.PUBLIC_URL + '/no_image_found.png'}
-										alt='not found'
-									/>
-								) : (
-									<img
-										src={launch.links.patch.small}
-										alt={`small ${launch.name} patch`}
-									/>
-								)}
-								<Card.Body>
-									<Card.Title className='text-center'>{launch.name}</Card.Title>
-									<Card.Subtitle className='mb-2 text-muted text-center'>
-										<Moment parse='YYYY-MM-DD'> {launch.date_utc}</Moment>
-									</Card.Subtitle>
-								</Card.Body>
-							</Card>
-						</Link>
-					);
-				})}
-			</CardDeck>
 		</>
 	);
 };

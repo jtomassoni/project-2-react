@@ -1,0 +1,5 @@
+.LinkStyle {
+	margin: 2rem;
+	display: flex;
+	justify-content: space-evenly;
+}

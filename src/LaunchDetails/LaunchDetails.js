@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Moment from 'react-moment';
 import Carousel from 'react-bootstrap/Carousel';
+import './LaunchDetails.css';
 
 const LaunchDetails = ({ match }) => {
 	const [launch, setLaunch] = useState('');
@@ -17,7 +18,7 @@ const LaunchDetails = ({ match }) => {
 			.then((res) => {
 				setLaunch(res);
 			})
-			.catch((error) => alert('API Fetch Error'));
+			.catch(console.error);
 		//eslint-disable-next-line
 	}, []);
 	if (launch.length === 0) {
@@ -42,15 +43,8 @@ const LaunchDetails = ({ match }) => {
 
 	return (
 		<Container>
-			<Row style={{ borderBottom: '10px double #097ABD' }}>
-				<Col
-					style={{
-						alignItems: 'center',
-						border: '4px solid gray',
-						textAlign: 'center',
-						margin: '4rem',
-						lineHeight: '5rem',
-					}}>
+			<Row style={{ borderBottom: '4px solid #097ABD' }}>
+				<Col className='InfoStyle'>
 					<h3>Mission Name: </h3>
 					<p>{launch.name}</p>
 				</Col>
@@ -70,14 +64,7 @@ const LaunchDetails = ({ match }) => {
 						</>
 					)}
 				</Col>
-				<Col
-					style={{
-						alignItems: 'center',
-						border: '4px solid gray',
-						textAlign: 'center',
-						margin: '4rem',
-						lineHeight: '3rem',
-					}}>
+				<Col className='InfoStyle'>
 					<h3>Mission Date: </h3>{' '}
 					<Moment parse='YYYY-MM-DD HH:mm'> {launch.date_utc}</Moment>
 				</Col>
@@ -88,23 +75,8 @@ const LaunchDetails = ({ match }) => {
 						<Carousel>
 							{launch.links.flickr.original.map((pic) => {
 								return (
-									<Carousel.Item
-										style={{
-											marginTop: '2rem',
-											height: '400px',
-										}}
-										key={pic}>
-										<img
-											src={pic}
-											style={{
-												height: '100%',
-												width: '100%',
-												objectFit: 'contain',
-												objectPosition: 'center',
-											}}
-											className='img-fluid'
-											alt='launch'
-										/>
+									<Carousel.Item className='CarouselItemStyle' key={pic}>
+										<img src={pic} className='CarouselImgStyle' alt='launch' />
 									</Carousel.Item>
 								);
 							})}
@@ -120,12 +92,7 @@ const LaunchDetails = ({ match }) => {
 					)}
 				</Col>
 
-				<Col
-					style={{
-						marginTop: '2rem',
-						textAlign: 'center',
-						lineHeight: '2rem',
-					}}>
+				<Col className='DetailsStyle'>
 					<h4>Mission Details:</h4>
 					{launch.details !== null ? (
 						<p>{launch.details}</p>
@@ -154,9 +121,6 @@ const LaunchDetails = ({ match }) => {
 					)}
 				</Col>
 			</Row>
-			{/* <div className='detailsVehiclesUsed'>
-				{launch.ships.map(())}
-			</div> */}
 		</Container>
 	);
 };
