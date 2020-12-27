@@ -1,0 +1,18 @@
+.welcome{
+    text-align: center;
+    border-bottom: 4px solid #5C86A0;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.welcomeimg{
+    width: 400px;
+}
+
+.carouselimg{
+    height: 400px;
+    object-fit: contain;
+    object-position: center;
+
+}

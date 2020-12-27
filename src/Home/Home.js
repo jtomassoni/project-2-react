@@ -1,4 +1,5 @@
 import React from 'react';
+import './Home.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -7,20 +8,13 @@ const Home = () => {
 	return (
 		<Container>
 			<Row>
-				<Col
-					style={{
-						textAlign: 'center',
-						borderBottom: '4px solid #5C86A0',
-						marginTop: '2rem',
-						paddingBottom: '2rem',
-						marginBottom: '2rem',
-					}}>
+				<Col className='welcome'>
 					<h1>
 						Welcome to{' '}
 						<img
 							src='https://i.imgur.com/NxwMIf2.png'
 							alt='jtxlogo'
-							style={{ maxWidth: '400px' }}
+							className='welcomeimg'
 						/>
 					</h1>
 					<h5>
@@ -30,120 +24,48 @@ const Home = () => {
 			</Row>
 			<Row style={{ textAlign: 'center' }}>
 				<Col>
-					<Carousel>
-						<Carousel.Item
-							style={{
-								height: '400px',
-							}}
-							key={'https://i.imgur.com/CbupccT.jpg'}>
-							<p>
-								<img
-									src={'https://i.imgur.com/CbupccT.jpg'}
-									style={{
-										height: '100%',
-										width: '100%',
-										objectFit: 'contain',
-										objectPosition: 'center',
-									}}
-									className='img-fluid'
-									alt='launch'
-								/>
-							</p>
+					<Carousel style={{ marginBottom: '2rem' }}>
+						<Carousel.Item key={'https://i.imgur.com/CbupccT.jpg'}>
+							<img
+								src={'https://i.imgur.com/CbupccT.jpg'}
+								className='carouselimg'
+								alt='launch'
+							/>
 						</Carousel.Item>
-						<Carousel.Item
-							style={{
-								height: '400px',
-							}}
-							key={'https://i.imgur.com/cocjO0P.jpg'}>
-							<p>
-								<img
-									src={'https://i.imgur.com/cocjO0P.jpg'}
-									style={{
-										height: '100%',
-										width: '100%',
-										objectFit: 'contain',
-										objectPosition: 'center',
-									}}
-									className='img-fluid'
-									alt='launch'
-								/>
-							</p>
+						<Carousel.Item key={'https://i.imgur.com/cocjO0P.jpg'}>
+							<img
+								src={'https://i.imgur.com/cocjO0P.jpg'}
+								className='carouselimg'
+								alt='launch'
+							/>
 						</Carousel.Item>
-						<Carousel.Item
-							style={{
-								height: '400px',
-							}}
-							key={'https://i.imgur.com/o1mIQr4.jpg'}>
-							<p>
-								<img
-									src={'https://i.imgur.com/o1mIQr4.jpg'}
-									style={{
-										height: '100%',
-										width: '100%',
-										objectFit: 'contain',
-										objectPosition: 'center',
-									}}
-									className='img-fluid'
-									alt='launch'
-								/>
-							</p>
+						<Carousel.Item key={'https://i.imgur.com/o1mIQr4.jpg'}>
+							<img
+								src={'https://i.imgur.com/o1mIQr4.jpg'}
+								className='carouselimg'
+								alt='launch'
+							/>
 						</Carousel.Item>
-						<Carousel.Item
-							style={{
-								height: '400px',
-							}}
-							key={'https://i.imgur.com/hH2LBp4.jpg'}>
-							<p>
-								<img
-									src={'https://i.imgur.com/hH2LBp4.jpg'}
-									style={{
-										height: '100%',
-										width: '100%',
-										objectFit: 'contain',
-										objectPosition: 'center',
-									}}
-									className='img-fluid'
-									alt='launch'
-								/>
-							</p>
+						<Carousel.Item key={'https://i.imgur.com/hH2LBp4.jpg'}>
+							<img
+								src={'https://i.imgur.com/hH2LBp4.jpg'}
+								className='carouselimg'
+								alt='launch'
+							/>
 						</Carousel.Item>
-						<Carousel.Item
-							style={{
-								height: '400px',
-							}}
-							key={'https://i.imgur.com/74b7vdE.jpg'}>
-							<p>
-								<img
-									src={'https://i.imgur.com/74b7vdE.jpg'}
-									style={{
-										height: '100%',
-										width: '100%',
-										objectFit: 'contain',
-										objectPosition: 'center',
-									}}
-									className='img-fluid'
-									alt='launch'
-								/>
-							</p>
+						<Carousel.Item key={'https://i.imgur.com/74b7vdE.jpg'}>
+							<img
+								src={'https://i.imgur.com/74b7vdE.jpg'}
+								className='carouselimg'
+								alt='launch'
+							/>
 						</Carousel.Item>
-						<Carousel.Item
-							style={{
-								height: '400px',
-							}}
-							key={'https://i.imgur.com/yV4x9Tc.jpg'}>
-							<p>
-								<img
-									src={'https://i.imgur.com/yV4x9Tc.jpg'}
-									style={{
-										height: '100%',
-										width: '100%',
-										objectFit: 'contain',
-										objectPosition: 'center',
-									}}
-									className='img-fluid'
-									alt='launch'
-								/>
-							</p>
+						<Carousel.Item key={'https://i.imgur.com/yV4x9Tc.jpg'}>
+							<img
+								src={'https://i.imgur.com/yV4x9Tc.jpg'}
+								className='carouselimg'
+								alt='launch'
+							/>
 						</Carousel.Item>
 					</Carousel>
 				</Col>
