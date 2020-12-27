@@ -1,0 +1,24 @@
+.InfoStyle{
+    border: 4px solid gray;
+    text-align: center;
+    margin: 4rem;
+    line-height: 5rem;
+}
+
+.CarouselItemStyle{
+    margin-top: 2rem;
+    height: 400px;
+}
+
+.CarouselImgStyle{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.DetailsStyle{
+    margin-top: 2rem;
+    text-align: center;
+    line-height: 2rem;
+}

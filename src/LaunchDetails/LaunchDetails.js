@@ -43,7 +43,7 @@ const LaunchDetails = ({ match }) => {
 
 	return (
 		<Container>
-			<Row style={{ borderBottom: '4px solid #097ABD' }}>
+			<Row style={{ borderBottom: '2px solid #097ABD' }}>
 				<Col className='InfoStyle'>
 					<h3>Mission Name: </h3>
 					<p>{launch.name}</p>
@@ -91,7 +91,6 @@ const LaunchDetails = ({ match }) => {
 						</>
 					)}
 				</Col>
-
 				<Col className='DetailsStyle'>
 					<h4>Mission Details:</h4>
 					{launch.details !== null ? (
