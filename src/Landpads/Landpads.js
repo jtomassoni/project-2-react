@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
 import CardDeck from 'react-bootstrap/CardDeck';
+import './LandpadsStyle.css';
 
 let landpadsUrl = 'https://api.spacexdata.com/v4/landpads';
 const Crew = () => {
@@ -39,26 +40,13 @@ const Crew = () => {
 	}
 
 	return (
-		<Container
-			fluid
-			style={{
-				display: 'flex',
-				justifyContent: 'space-around',
-				alignItems: 'center',
-				textAlign: 'center',
-			}}>
+		<Container className='containerStyle'>
 			<CardDeck>
 				{landpads.map((landpad) => {
 					return (
 						<Link to={`/landpads/${landpad.id}`}>
 							<Card
-								style={{
-									marginTop: '5rem',
-									width: '18rem',
-									textAlign: 'center',
-									backgroundColor: 'rgba(255,255,255, 0)',
-									border: '2px white solid',
-								}}
+								className='cardStyle'
 								key={landpad.id}>
 								<Card.Body>
 									<Card.Title>{landpad.full_name}</Card.Title>

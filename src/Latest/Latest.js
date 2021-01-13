@@ -107,6 +107,8 @@ const LaunchDetails = () => {
 						<ReactPlayer
 							url={`https://www.youtube.com/watch?v=${launch.links.youtube_id}`}
 							controls={true}
+							width='50vw'
+							height='40vh'
 						/>
 					) : (
 						<>

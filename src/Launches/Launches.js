@@ -57,20 +57,18 @@ const Launches = () => {
 				<CardDeck className='justify-content-center'>
 					{launches.map((launch) => {
 						return (
-							<Link
-								to={`/launches/${launch.id}`}
-								key={launch.id}
-								className='LinkStyle'>
-								<Card>
+							<Link to={`/launches/${launch.id}`} key={launch.id}>
+								<Card className='cardStyle'>
 									{!launch.links.patch.small ? (
 										<Card.Img
 											variant='top'
+
 											src={process.env.PUBLIC_URL + '/no_image_found.png'}
 											alt='not found'
 										/>
 									) : (
 										<Card.Img
-											variant='top'
+											className='imgStyle'
 											src={launch.links.patch.small}
 											alt={`small ${launch.name} patch`}
 										/>
@@ -79,7 +77,7 @@ const Launches = () => {
 										<Card.Title className='text-center'>
 											{launch.name}
 										</Card.Title>
-										<Card.Subtitle className='mb-2 text-muted text-center'>
+										<Card.Subtitle className='mb-2 text-center'>
 											<Moment parse='YYYY-MM-DD'> {launch.date_utc}</Moment>
 										</Card.Subtitle>
 									</Card.Body>

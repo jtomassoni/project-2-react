@@ -27,10 +27,9 @@ function App() {
 					color: 'white',
 					backgroundImage: `url("https://i.imgur.com/wZoyIyI.png")`,
 					backgroundSize: 'cover',
-					// backgroundRepeat: '',
 					backgroundPosition: 'center',
 					backgroundAttachment: 'fixed',
-					// height: '91vh',
+					height: '90%',
 				}}>
 				<Route path='/latest' exact component={Latest} />
 				<Route path='/launches' exact component={Launches} />

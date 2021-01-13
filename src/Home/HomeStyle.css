@@ -1,23 +1,35 @@
-.welcome{
-    text-align: center;
-    border-bottom: 4px solid #5C86A0;
-    margin-top: 2rem;
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
+.welcome {
+	text-align: center;
+	border-bottom: 4px solid #5c86a0;
+	margin-top: 5rem;
+	padding-bottom: 5rem;
+	margin-bottom: 5rem;
 }
 
-.welcomeimg{
-    width: 325px;
+.welcomeimg {
+	width: 325px;
 }
 
-.carouselimg{
-    height: 400px;
-    object-fit: contain;
-    object-position: center;
-
+.carouselimg {
+	max-height: 400px;
+	width: auto;
+	object-fit: contain;
+	object-position: center;
 }
 
-.carousel{
-    margin-bottom: 2rem;
+.carousel {
+	margin-bottom: 2rem;
+	height: 400px;
+	width: auto;
+	object-fit: contain;
+	object-position: center;
+}
 
+.intro {
+	text-align: center;
+	align-content: center;
+}
+
+.test {
+	padding-top: 5rem;
 }

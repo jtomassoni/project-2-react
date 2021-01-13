@@ -40,26 +40,26 @@ const TotalShips = () => {
 	}
 
 	return (
-		<Container fluid>
-			<CardDeck
-				style={{
-					alignItems: 'center',
-					display: 'flex',
-					justifyContent: 'space-around',
-				}}>
+		<Container>
+			<CardDeck>
 				{ships.map((ship) => {
 					return (
 						<Link to={`/ships/${ship.id}`} key={ship.id}>
-							<Card
-								className='CardStyle'>
+							<Card className='CardStyle'>
 								{!ship.image ? (
 									<Card.Img
 										variant='top'
 										src={process.env.PUBLIC_URL + '/no_image_found.png'}
 										alt='not found'
+										className='jeff'
 									/>
 								) : (
-									<Card.Img variant='top' src={ship.image} alt={ship.name} />
+									<Card.Img
+										variant='top'
+										src={ship.image}
+										alt={ship.name}
+										className='jeff'
+									/>
 								)}
 								<Card.Body>
 									<Card.Title className='text-center'>{ship.name}</Card.Title>

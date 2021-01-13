@@ -71,11 +71,7 @@ const Header = () => {
 						<Nav.Link href='/latest'>Latest</Nav.Link>
 						<Nav.Link href='/launches'>Launches</Nav.Link>
 						<Nav.Link href='/crew'>Crew</Nav.Link>
-						<NavDropdown title='Vehicles' id='basic-nav-dropdown'>
-							<NavDropdown.Item href='/ships'>Ships</NavDropdown.Item>
-							<NavDropdown.Item href='/launchpads'>Launchpads</NavDropdown.Item>
-							<NavDropdown.Item href='/landpads'>Landpads</NavDropdown.Item>
-						</NavDropdown>
+						<Nav.Link href='/ships'>Ships</Nav.Link>
 						<NavDropdown title="JT's Favorites" id='basic-nav-dropdown'>
 							<NavDropdown.Item href='/launches/5eb87d39ffd86e000604b37d'>
 								First Starlink
@@ -100,10 +96,7 @@ const Header = () => {
 					<Modal.Title>
 						I'm Starman, currently flying {roadster.speed_mph.toFixed(2)}
 						mph
-						<small>
-							({roadster.speed_kph.toFixed(2)}kph...if you're wrong)
-						</small>{' '}
-						around the sun.
+						<small>({roadster.speed_kph.toFixed(2)}kph)</small> around the sun.
 					</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>

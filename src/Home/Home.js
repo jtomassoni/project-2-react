@@ -22,7 +22,7 @@ const Home = () => {
 					</h5>
 				</Col>
 			</Row>
-			<Row style={{ textAlign: 'center' }}>
+			<Row className='test'>
 				<Col>
 					<Carousel className='carousel'>
 						<Carousel.Item key={'https://i.imgur.com/CbupccT.jpg'}>
@@ -68,24 +68,26 @@ const Home = () => {
 							/>
 						</Carousel.Item>
 					</Carousel>
-				<Col>
-					<p>
-						If you've made it this far, it means you're good at a lot of things,
-						and deserve this beautiful website. From here, you'll be able to
-						navigate through the entire history of SpaceX Launches.
-					</p>
-					<p>
-						I've included functionality for sorting launches, viewing the
-						corresponding photo and video galleries, as well as information
-						about Vehichles, Rockets, Launch and Landing Locations, Crew, and a
-						gift from Elon.
-					</p>
-					<p>
-						If you have even a remote interest in space exploration, I hope that
-						you find this content easy to navigate and relatively interesting.
-						Thanks for stopping by!
-					</p>
 				</Col>
+				<Col>
+					<div className='intro'>
+						<p>
+							If you've made it this far, it means you're good at a lot of
+							things, and deserve this beautiful website. From here, you'll be
+							able to navigate through the entire history of SpaceX Launches.
+						</p>
+						<p>
+							I've included functionality for sorting launches, viewing the
+							corresponding photo and video galleries, as well as information
+							about Vehichles, Rockets, Launch and Landing Locations, Crew, and
+							a gift from Elon.
+						</p>
+						<p>
+							If you have even a remote interest in space exploration, I hope
+							that you find this content easy to navigate and relatively
+							interesting. Thanks for stopping by!
+						</p>
+					</div>
 				</Col>
 			</Row>
 		</Container>
