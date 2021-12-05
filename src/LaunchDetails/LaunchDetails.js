@@ -101,23 +101,26 @@ const LaunchDetails = ({ match }) => {
 				</Col>
 			</Row>
 			<Row className='justify-content-center'>
-				<Col
-					md='auto'
-					style={{ margin: '5rem', boxShadow: '0 0 20px 50px', padding: 0 }}>
-					{launch.links.youtube_id !== null ? (
-						<ReactPlayer
-							url={`https://www.youtube.com/watch?v=${launch.links.youtube_id}`}
-							controls={true}
-						/>
-					) : (
-						<>
-							<img
-								src={process.env.PUBLIC_URL + '/no_image_found.png'}
-								alt={launch.name}
+				<Col>
+					<div className='player-wrapper'>
+						{launch.links.youtube_id !== null ? (
+							<ReactPlayer
+								className='react-player'
+								url={`https://www.youtube.com/watch?v=${launch.links.youtube_id}`}
+								controls={true}
+								width='100%'
+								height='100%'
 							/>
-							<p>There are no videos to display</p>
-						</>
-					)}
+						) : (
+							<>
+								<img
+									src={process.env.PUBLIC_URL + '/no_image_found.png'}
+									alt={launch.name}
+								/>
+								<p>There are no videos to display</p>
+							</>
+						)}
+					</div>
 				</Col>
 			</Row>
 		</Container>

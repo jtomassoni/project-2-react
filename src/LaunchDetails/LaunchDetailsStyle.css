@@ -1,24 +1,34 @@
-.InfoStyle{
-    border: 4px solid gray;
-    text-align: center;
-    margin: 4rem;
-    line-height: 5rem;
+.InfoStyle {
+	border: 4px solid gray;
+	text-align: center;
+	margin: 4rem;
+	line-height: 5rem;
 }
 
-.CarouselItemStyle{
-    margin-top: 2rem;
-    height: 400px;
+.CarouselItemStyle {
+	margin-top: 2rem;
+	height: 400px;
 }
 
-.CarouselImgStyle{
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    object-position: center;
+.CarouselImgStyle {
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+	object-position: center;
 }
 
-.DetailsStyle{
-    margin-top: 2rem;
-    text-align: center;
-    line-height: 2rem;
+.DetailsStyle {
+	margin-top: 2rem;
+	text-align: center;
+	line-height: 2rem;
+}
+.player-wrapper {
+	position: relative;
+	padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+	position: absolute;
+	top: 0;
+	left: 0;
 }
