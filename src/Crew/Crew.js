@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
 import CardDeck from 'react-bootstrap/CardDeck';
-import './CrewStyles.css'
+import './CrewStyles.css';
 
 let crewUrl = 'https://api.spacexdata.com/v4/crew';
 const Crew = () => {
@@ -45,8 +45,8 @@ const Crew = () => {
 				{crew.map((crewMember) => {
 					return (
 						<Card
-							className='mt-5'
-							style={{ minWidth: '300px' }}
+							className='bg-dark text-white'
+							style={{ minWidth: '300px', margin: '1rem' }}
 							key={crewMember.id}>
 							<Card.Img src={crewMember.image} />
 							<Card.Body>
@@ -60,7 +60,9 @@ const Crew = () => {
 									<em>{crewMember.launches.length}</em>
 								</Card.Text>
 								<Card.Footer>
-									<Button variant='dark'>Click to learn More</Button>
+									<Button variant='dark' href={crewMember.wikipedia}>
+										Click to learn More
+									</Button>
 								</Card.Footer>
 							</Card.Body>
 						</Card>

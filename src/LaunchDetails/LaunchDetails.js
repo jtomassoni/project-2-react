@@ -75,7 +75,10 @@ const LaunchDetails = ({ match }) => {
 						<Carousel>
 							{launch.links.flickr.original.map((pic) => {
 								return (
-									<Carousel.Item className='CarouselItemStyle' key={pic}>
+									<Carousel.Item
+										className='CarouselItemStyle'
+										key={pic}
+										style={{ padding: '1rem' }}>
 										<img src={pic} className='CarouselImgStyle' alt='launch' />
 									</Carousel.Item>
 								);
@@ -86,6 +89,7 @@ const LaunchDetails = ({ match }) => {
 							<img
 								src={process.env.PUBLIC_URL + '/no_image_found.png'}
 								alt={launch.name}
+								style={{ padding: '1rem' }}
 							/>
 							<p>There are no photos to display</p>
 						</>
